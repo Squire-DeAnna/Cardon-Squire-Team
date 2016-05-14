@@ -9,6 +9,8 @@ import byui.cit260.conqueringConqueror.model.Map;
 import byui.cit260.conqueringConqueror.model.Player;
 import byui.cit260.conqueringConqueror.model.Character;
 import byui.cit260.conqueringConqueror.model.Game;
+import byui.cit260.conqueringConqueror.model.Items;
+import byui.cit260.conqueringConqueror.model.Location;
  
 
 /**
@@ -59,6 +61,31 @@ public class ConqueringConqueror {
        String gameInfo = gameOne.toString();
        System.out.println(gameInfo);
        
+       
+       
+       Items itemsOne = new Items();
+       
+       itemsOne.setInventoryType("dagger");
+       itemsOne.setItemWeight(7);
+       itemsOne.setQuantityInInventory(3);
+       itemsOne.setStrengthIncrease(2);
+       
+       String itemsInfo = itemsOne.toString();
+       System.out.println(itemsInfo);
+       
+       
+       
+       Location locationOne = new Location();
+       
+       locationOne.setRow(2);
+       locationOne.setColumn(4);
+       locationOne.setVisited(true);
+       locationOne.setDescription("enemy found");
+       locationOne.setResourceAvailable("food found");
+       locationOne.setResourceType("food");
+       
+       String locationInfo = locationOne.toString();
+       System.out.println(locationInfo);
     }
 }
     
