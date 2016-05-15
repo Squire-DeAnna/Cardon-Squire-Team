@@ -6,34 +6,32 @@
 package byui.cit260.conqueringConqueror.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
- * @author deannasquire
+ * @author Erika
  */
-public class Game implements Serializable {
+public class Game implements Serializable{
     
-    //class instance variables
-    private int totalTime;
+    // class instance variables
+    private double totalTime;
+    // I know that is not correct, but using it as a placeholder.
 
     public Game() {
     }
-
     
-    
-    public int getTotalTime() {
+    public double getTotalTime() {
         return totalTime;
     }
 
-    public void setTotalTime(int totalTime) {
+    public void setTotalTime(double totalTime) {
         this.totalTime = totalTime;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 41 * hash + this.totalTime;
+        int hash = 7;
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
         return hash;
     }
 
@@ -49,7 +47,7 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (this.totalTime != other.totalTime) {
+        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
             return false;
         }
         return true;
@@ -59,8 +57,6 @@ public class Game implements Serializable {
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + '}';
     }
-
- 
     
     
 }

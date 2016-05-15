@@ -9,69 +9,21 @@ import java.io.Serializable;
 
 /**
  *
- * @author deannasquire
+ * @author Erika
  */
-public class Map implements Serializable {
+public class Map implements Serializable{
+   
+    // class instance veriables
+    private static final int NUM_ROWS = 5;
+    private static final int NUM_COLS = 5;
     
-     //class instance variables
-    private double rowCount;
-    private double columnCount;
-
+    private Location[][] matrix;
+    
     public Map() {
+        matrix = new Location[NUM_ROWS][NUM_COLS];
     }
     
-    
-
-    public double getRowCount() {
-        return rowCount;
+    public Location getLocation(int row, int col){
+        return matrix[row][col];
     }
-
-    public void setRowCount(double rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    public double getColumnCount() {
-        return columnCount;
-    }
-
-    public void setColumnCount(double columnCount) {
-        this.columnCount = columnCount;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 29 * hash + (int) (Double.doubleToLongBits(this.rowCount) ^ (Double.doubleToLongBits(this.rowCount) >>> 32));
-        hash = 29 * hash + (int) (Double.doubleToLongBits(this.columnCount) ^ (Double.doubleToLongBits(this.columnCount) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Map other = (Map) obj;
-        if (Double.doubleToLongBits(this.rowCount) != Double.doubleToLongBits(other.rowCount)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.columnCount) != Double.doubleToLongBits(other.columnCount)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
-    }
-    
-    
-    
 }

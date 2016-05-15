@@ -6,24 +6,38 @@
 package byui.cit260.conqueringConqueror.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
 /**
  *
- * @author deannasquire
+ * @author Erika
  */
-public class Player implements Serializable { 
-    
-    //class instance variables
+public class Player implements Serializable {
+
+    // class instance variables
     private String name;
     private double strength;
     private double currentCarry;
     private double maxWeight;
+    List<Item> inventory;
+    List<Hero> team;
+    Location location;
 
     public Player() {
+        inventory = new ArrayList<>();
+        team = new ArrayList<>();
+    }
+    
+    public void addItem(Item i){
+        inventory.add(i);
+    }
+    
+    public void addHero(Hero h){
+        team.add(h);
     }
 
-    
-    
     public String getName() {
         return name;
     }
@@ -58,11 +72,11 @@ public class Player implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.name);
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.strength) ^ (Double.doubleToLongBits(this.strength) >>> 32));
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.currentCarry) ^ (Double.doubleToLongBits(this.currentCarry) >>> 32));
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.maxWeight) ^ (Double.doubleToLongBits(this.maxWeight) >>> 32));
+        int hash = 3;
+        hash = 31 * hash + Objects.hashCode(this.name);
+        hash = 31 * hash + (int) (Double.doubleToLongBits(this.strength) ^ (Double.doubleToLongBits(this.strength) >>> 32));
+        hash = 31 * hash + (int) (Double.doubleToLongBits(this.currentCarry) ^ (Double.doubleToLongBits(this.currentCarry) >>> 32));
+        hash = 31 * hash + (int) (Double.doubleToLongBits(this.maxWeight) ^ (Double.doubleToLongBits(this.maxWeight) >>> 32));
         return hash;
     }
 
@@ -97,8 +111,6 @@ public class Player implements Serializable {
     public String toString() {
         return "Player{" + "name=" + name + ", strength=" + strength + ", currentCarry=" + currentCarry + ", maxWeight=" + maxWeight + '}';
     }
-    
-    
     
     
 }
