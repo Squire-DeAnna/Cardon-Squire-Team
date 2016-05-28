@@ -66,6 +66,36 @@ public class PlayerControl {
 	return strength;
     }
 
-
+    
+    public double calcPlayerMaxCarry(double strength, double maxCarry){
+        
+        if (strength < 0) {
+            return -1.0;
+        }
+        
+        if (strength <= 9) {
+            return 0;
+        }
+        
+        maxCarry = strength * .1;
+        
+        return maxCarry;
+        
+    }
+    
+    public double calcPlayerMaxStrength(double maxStrength){
+        
+        if (maxStrength < 0) {
+            return -1.0;
+        }
+        
+        if (maxStrength == 0) {
+            return 0;
+        }
+        
+        maxStrength = maxStrength * 1.2;
+        
+        return maxStrength;
+    }
     
 }

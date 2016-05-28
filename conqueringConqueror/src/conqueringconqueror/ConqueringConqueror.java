@@ -28,7 +28,7 @@ public class ConqueringConqueror {
       playerOne.setName("Lizzy");
       playerOne.setStrength(25);
       playerOne.setCurrentCarry(40);
-      playerOne.setMaxWeight(60);
+      playerOne.setMaxCarry(60);
       
       String playerInfo = playerOne.toString();
       System.out.println(playerInfo);

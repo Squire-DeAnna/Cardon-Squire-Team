@@ -214,5 +214,133 @@ public class PlayerControlTest {
         
         assertEquals(expResult, result, 0.0);
     }
+
+    /**
+     * Test of calcPlayerMaxCarry method, of class PlayerControl.
+     */
+    @Test
+    public void testCalcPlayerMaxCarry() {
+        System.out.println("calcPlayerMaxCarry");
+        
+        /****************************
+         * Test case #1
+        ***************************/
+        System.out.println("\tTest case #1");
+        
+        // input values for test case #1
+        double strength = 50;
+        double maxCarry = 0.0;
+        
+        double expResult = 5; // expected output returned value
+        
+        // create instance of PlayerControl class
+        PlayerControl instance = new PlayerControl();
+        
+        // call function to run test
+        double result = instance.calcPlayerMaxCarry(strength, maxCarry);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.01);
+        
+        
+        /****************************
+         * Test case #2
+        ***************************/
+        System.out.println("\tTest case #2");
+        
+        // input values for test case #2
+        strength = -1;
+        maxCarry = 0.0;
+        
+        expResult = -1; // expected output returned value
+        
+        // call function to run test
+        result = instance.calcPlayerMaxCarry(strength, maxCarry);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.01);
+        
+        
+        /****************************
+         * Test case #3
+        ***************************/
+        System.out.println("\tTest case #3");
+        
+        // input values for test case #3
+        strength = 9;
+        maxCarry = 0.0;
+        
+        expResult = 0; // expected output returned value
+        
+        // call function to run test
+        result = instance.calcPlayerMaxCarry(strength, maxCarry);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.01);
+
+    }
+
+
+    /**
+     * Test of calcPlayerMaxStrength method, of class PlayerControl.
+     */
+    @Test
+    public void testCalcPlayerMaxStrength() {
+        System.out.println("calcPlayerMaxStrength");
+        
+        /****************************
+         * Test case #1
+         ***************************/
+        System.out.println("\tTest case #1");
+        
+        // input values for test case #1
+        double maxStrength = 70;
+        
+        double expResult = 84; // expected output returned value
+        
+        // create instance of PlayerControl Class
+        PlayerControl instance = new PlayerControl();
+        
+        // call function to run test
+        double result = instance.calcPlayerMaxStrength(maxStrength);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0);
+        
+        
+        /****************************
+         * Test case #2
+         ***************************/
+        System.out.println("\tTest case #2");
+        
+        // input values for test case #2
+        maxStrength = -1;
+        
+        expResult = -1; // expected output returned value
+        
+        // call function to run test
+        result = instance.calcPlayerMaxStrength(maxStrength);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0);
+        
+        
+        /****************************
+         * Test case #3
+         ***************************/
+        System.out.println("\tTest case #3");
+        
+        // input values for test case #3
+        maxStrength = 0;
+        
+        expResult = 0; // expected output returned value
+        
+        // call function to run test
+        result = instance.calcPlayerMaxStrength(maxStrength);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0);
+
+    }
     
 }

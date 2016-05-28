@@ -19,8 +19,9 @@ public class Player implements Serializable {
     // class instance variables
     private String name;
     private double strength;
+    private double maxStrength;
     private double currentCarry;
-    private double maxWeight;
+    private double maxCarry;
     List<Item> inventory;
     List<Hero> team;
     Location location;
@@ -53,6 +54,14 @@ public class Player implements Serializable {
     public void setStrength(double strength) {
         this.strength = strength;
     }
+    
+    public double getMaxStrength() {
+        return maxStrength;
+    }
+
+    public void setMaxStrength(double maxStrength) {
+        this.maxStrength = maxStrength;
+    }
 
     public double getCurrentCarry() {
         return currentCarry;
@@ -62,12 +71,12 @@ public class Player implements Serializable {
         this.currentCarry = currentCarry;
     }
 
-    public double getMaxWeight() {
-        return maxWeight;
+    public double getMaxCarry() {
+        return maxCarry;
     }
 
-    public void setMaxWeight(double maxWeight) {
-        this.maxWeight = maxWeight;
+    public void setMaxCarry(double maxCarry) {
+        this.maxCarry = maxCarry;
     }
 
     @Override
@@ -75,8 +84,9 @@ public class Player implements Serializable {
         int hash = 3;
         hash = 31 * hash + Objects.hashCode(this.name);
         hash = 31 * hash + (int) (Double.doubleToLongBits(this.strength) ^ (Double.doubleToLongBits(this.strength) >>> 32));
+        hash = 31 * hash + (int) (Double.doubleToLongBits(this.maxStrength) ^ (Double.doubleToLongBits(this.maxStrength) >>> 32));
         hash = 31 * hash + (int) (Double.doubleToLongBits(this.currentCarry) ^ (Double.doubleToLongBits(this.currentCarry) >>> 32));
-        hash = 31 * hash + (int) (Double.doubleToLongBits(this.maxWeight) ^ (Double.doubleToLongBits(this.maxWeight) >>> 32));
+        hash = 31 * hash + (int) (Double.doubleToLongBits(this.maxCarry) ^ (Double.doubleToLongBits(this.maxCarry) >>> 32));
         return hash;
     }
 
@@ -95,10 +105,13 @@ public class Player implements Serializable {
         if (Double.doubleToLongBits(this.strength) != Double.doubleToLongBits(other.strength)) {
             return false;
         }
+        if (Double.doubleToLongBits(this.maxStrength) != Double.doubleToLongBits(other.maxStrength)) {
+            return false;
+        }
         if (Double.doubleToLongBits(this.currentCarry) != Double.doubleToLongBits(other.currentCarry)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.maxWeight) != Double.doubleToLongBits(other.maxWeight)) {
+        if (Double.doubleToLongBits(this.maxCarry) != Double.doubleToLongBits(other.maxCarry)) {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
@@ -109,7 +122,7 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", strength=" + strength + ", currentCarry=" + currentCarry + ", maxWeight=" + maxWeight + '}';
+        return "Player{" + "name=" + name + ", strength=" + strength + ", maxStrength=" + maxStrength + ", currentCarry=" + currentCarry + ", maxWeight=" + maxCarry + '}';
     }
     
     
