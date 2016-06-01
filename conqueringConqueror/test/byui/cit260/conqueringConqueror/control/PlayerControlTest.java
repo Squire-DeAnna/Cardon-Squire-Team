@@ -215,6 +215,13 @@ public class PlayerControlTest {
         assertEquals(expResult, result, 0.0);
     }
 
+    
+    
+    /**
+ *
+ * @author Erika
+ */
+    
     /**
      * Test of calcPlayerMaxCarry method, of class PlayerControl.
      */

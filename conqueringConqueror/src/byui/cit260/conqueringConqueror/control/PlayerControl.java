@@ -5,6 +5,9 @@
  */
 package byui.cit260.conqueringConqueror.control;
 
+import byui.cit260.conqueringConqueror.model.Item;
+import java.util.List;
+
 /**
  *
  * @author deannasquire
@@ -65,7 +68,11 @@ public class PlayerControl {
 
 	return strength;
     }
-
+    
+    /**
+    *
+    * @author Erika
+    */
     
     public double calcPlayerMaxCarry(double strength, double maxCarry){
         
@@ -98,4 +105,18 @@ public class PlayerControl {
         return maxStrength;
     }
     
+    public double calcPlayerCurrentCarry(List<Item> items){
+        
+        if (items == null || items.size() == 0) {
+            return 0;
+        }
+        
+        double currentCarry = 0;
+        
+        for(Item item : items){
+            currentCarry += item.getWeight();
+        }
+        
+        return currentCarry;
+    }
 }
