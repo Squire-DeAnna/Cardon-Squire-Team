@@ -12,17 +12,26 @@ import byui.cit260.conqueringConqueror.model.Location;
 import byui.cit260.conqueringConqueror.model.Map;
 import byui.cit260.conqueringConqueror.model.Player;
 import byui.cit260.conqueringConqueror.model.Villain;
+import byui.cit260.conqueringConqueror.view.StartProgramView;
 
 /**
  *
  * @author deannasquire
  */
 public class ConqueringConqueror {
+    
+    private static Player player;
+    private static Game game;
    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+      StartProgramView startProgram = new StartProgramView();
+      
+      startProgram.startProgram();
+        
       Player playerOne = new Player();
       
       playerOne.setName("Lizzy");
@@ -90,6 +99,25 @@ public class ConqueringConqueror {
       
       String villainInfo = villainOne.toString();
       System.out.println(villainInfo);
+      
+      
+      
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        ConqueringConqueror.player = player;
+    }
+
+    public static Game getGame() {
+        return game;
+    }
+
+    public static void setGame(Game game) {
+        ConqueringConqueror.game = game;
     }
 }
     
