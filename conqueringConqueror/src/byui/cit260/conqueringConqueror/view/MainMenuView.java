@@ -89,6 +89,8 @@ public class MainMenuView {
 
     private void startNewGame() {
         ProgramController.createNewGame(ConqueringConqueror.getPlayer());
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void loadSavedGame() {
