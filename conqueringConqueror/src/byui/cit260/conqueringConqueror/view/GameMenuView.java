@@ -125,7 +125,9 @@ public class GameMenuView {
     }
 
     private void explore() {
-        System.out.println("CALLED EXPLORE - NOT IMPLEMENTED YET");
+        //System.out.println("CALLED EXPLORE - NOT IMPLEMENTED YET");  
+        ExploreMenuView exploreMenu = new ExploreMenuView();  
+        exploreMenu.displayMenu();
     }
 
     private void loot() {
@@ -149,7 +151,7 @@ public class GameMenuView {
     }
 
     private void saveCurrentGame() {
-        System.out.println("CALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
+        System.out.println("CALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");        
     }
 
     private void helpMenu() {
