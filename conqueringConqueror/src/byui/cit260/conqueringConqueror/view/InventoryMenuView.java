@@ -11,23 +11,16 @@ import java.util.Scanner;
  *
  * @author Erika
  */
-public class GameMenuView {
-        private final String menu = "\n"
-            + "\nM - Map"
-            + "\nI - Inventory"
-            + "\nT - Travel"
-            + "\nE - Explore"
-            + "\nA - Attack"
-            + "\nL - Loot"
-            + "\nF - Eat/Drink"
+public class InventoryMenuView {
+    private final String menu = "\n"
             + "\nW - Weapons"
-            + "\nP - Team"
+            + "\nF - Food"
             + "\nS - Save"
             + "\nH - Help"
             + "\nQ - Quit"
             ;
     
-    public GameMenuView(){
+    public InventoryMenuView(){
         
     }
     
@@ -50,32 +43,11 @@ public class GameMenuView {
     public void doAction(char selection) {
         
         switch(selection){
-            case 'M':
-                map();
-                break;
-            case 'I':
-                inventory();
-                break;
-            case 'T':
-                travel();
-                break;
-            case 'E':
-                explore();
-                break;
-            case 'A':
-                attack();
-                break;
-            case 'L':
-                loot();
-                break;
-            case 'F':
-                eatDrink();
-                break;
             case 'W':
                 weapons();
                 break;
-            case 'P':
-                team();
+            case 'F':
+                food();
                 break;
             case 'S':
                 saveCurrentGame();
@@ -112,41 +84,12 @@ public class GameMenuView {
         return input.toUpperCase();
     }
 
-    private void map() {
-        System.out.println("CALLED MAP - NOT IMPLEMENTED YET");
-    }
-
-    private void inventory() {
-        InventoryMenuView inventoryMenu = new InventoryMenuView();
-        inventoryMenu.displayMenu();
-    }
-
-    private void travel() {
-        System.out.println("CALLED TRAVEL - NOT IMPLEMENTED YET");
-    }
-
-    private void explore() {
-        System.out.println("CALLED EXPLORE - NOT IMPLEMENTED YET");
-    }
-
-    private void loot() {
-        System.out.println("CALLED LOOT - NOT IMPLEMENTED YET");
-    }
-
-    private void attack() {
-        System.out.println("CALLED ATTACK - NOT IMPLEMENTED YET");
-    }
-
-    private void eatDrink() {
-        System.out.println("CALLED EAT/DRINK - NOT IMPLEMENTED YET");
-    }
-
     private void weapons() {
         System.out.println("CALLED WEAPONS - NOT IMPLEMENTED YET");
     }
 
-    private void team() {
-        System.out.println("CALLED TEAM - NOT IMPLEMENTED YET");
+    private void food() {
+        System.out.println("CALLED FOOD - NOT IMPLEMENTED YET");
     }
 
     private void saveCurrentGame() {
@@ -157,4 +100,5 @@ public class GameMenuView {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayMenu();
     }
+
 }
