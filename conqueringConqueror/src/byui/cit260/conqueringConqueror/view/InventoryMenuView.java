@@ -11,20 +11,22 @@ import java.util.Scanner;
  *
  * @author Erika
  */
-public class InventoryMenuView {
-    private final String menu = "\n"
+public abstract class InventoryMenuView extends View {
+    
+    public InventoryMenuView() {
+       
+            super ("\n************************************"
+            + "\n|          Inventory Menu          |"
+            + "\n************************************"
             + "\nW - Weapons"
             + "\nF - Food"
             + "\nS - Save"
             + "\nH - Help"
-            + "\nQ - Quit"
-            ;
-    
-    public InventoryMenuView(){
+            + "\nQ - Quit");
         
     }
     
-    public void displayMenu(){
+    /*public void displayMenu(){
         
         char selection = ' ';
         
@@ -38,11 +40,13 @@ public class InventoryMenuView {
             
         } while(selection != 'Q');
         
-    }
+    }*/
     
-    public void doAction(char selection) {
+    public boolean doAction(String selection) {
         
-        switch(selection){
+        char charSel = selection.toUpperCase().charAt(0);
+        
+        switch(charSel){
             case 'W':
                 weapons();
                 break;
@@ -56,15 +60,16 @@ public class InventoryMenuView {
                 helpMenu();
                 break;
             case 'Q':
-                break;
+                return true;
+                
             default:
                 System.out.println("Invalid option");
                 break;
         }
-        
+        return false;
     }
     
-    public String getInput() {
+    /*public String getInput() {
         Scanner keyboard = new Scanner(System.in);
         String input = null;
         boolean isValid = false;
@@ -82,7 +87,7 @@ public class InventoryMenuView {
         }
         
         return input.toUpperCase();
-    }
+    }*/
 
     private void weapons() {
         System.out.println("CALLED WEAPONS - NOT IMPLEMENTED YET");
@@ -97,8 +102,8 @@ public class InventoryMenuView {
     }
 
     private void helpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        HelpMenuView helpMenu = new HelpMenuView() {};
+        helpMenu.display();
     }
 
 }

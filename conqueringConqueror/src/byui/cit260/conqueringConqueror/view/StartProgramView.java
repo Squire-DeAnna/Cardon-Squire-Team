@@ -32,8 +32,8 @@ public class StartProgramView {
         
         displayWelcomeMessage(player.getName());
         
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        MainMenuView mainMenu = new MainMenuView() {};
+        mainMenu.display();
         
     }
     
@@ -62,7 +62,7 @@ public class StartProgramView {
     public void displayBanner(){
              
         String welcome = "";
-        welcome = "===============================" +
+        welcome = "===================================" +
                 "\nWelcome to Conquering the Conqueror" +
                 "\nGet ready for some fun!" +
                 "\n===================================";

@@ -11,19 +11,21 @@ import java.util.Scanner;
  *
  * @author Erika
  */
-public class HelpMenuView {
-    private final String menu = "\n"
+public abstract class HelpMenuView extends View {
+    
+    public HelpMenuView() {
+    
+            super ("\n************************************"
+            + "\n|             Help Menu            |"
+            + "\n************************************"
             + "\nA - About Game"
             + "\nM - How to Move in Game"
             + "\nS - How Strength is Determined"
-            + "\nQ - Quit"
-            ;
+            + "\nQ - Quit");
     
-    public HelpMenuView(){
-        
     }
     
-    public void displayMenu(){
+    /*public void displayMenu(){
         
         char selection = ' ';
         
@@ -37,11 +39,13 @@ public class HelpMenuView {
             
         } while(selection != 'Q');
         
-    }
+    }*/
     
-    public void doAction(char selection) {
+    public boolean doAction(String selection) {
         
-        switch(selection){
+        char charSel = selection.toUpperCase().charAt(0);
+        
+        switch(charSel){
             case 'A':
                 aboutGame();
                 break;
@@ -52,15 +56,16 @@ public class HelpMenuView {
                 howStrengthIsDetermined();
                 break;
             case 'Q':
-                break;
+                return true;
+                
             default:
                 System.out.println("Invalid option");
                 break;
         }
-        
+        return false;
     }
     
-    public String getInput() {
+    /*public String getInput() {
         Scanner keyboard = new Scanner(System.in);
         String input = null;
         boolean isValid = false;
@@ -78,10 +83,12 @@ public class HelpMenuView {
         }
         
         return input.toUpperCase();
-    }
+    }*/
 
 
     private void aboutGame() {
+        System.out.println("===========================================");
+        System.out.println("|                About Game               |");
         System.out.println("===========================================");
         System.out.println("It’s 2340 BC and Sargon the Great");
         System.out.println("is feverously creating the Akkadian");
@@ -110,6 +117,8 @@ public class HelpMenuView {
 
     private void howToMove() {
         System.out.println("===========================================");
+        System.out.println("|               How To Move               |");
+        System.out.println("===========================================");
         System.out.println("The city will consist of a 5x5");
         System.out.println("map that you can move North, East");
         System.out.println("South, and West on.");
@@ -118,6 +127,8 @@ public class HelpMenuView {
     }
 
     private void howStrengthIsDetermined() {
+        System.out.println("===========================================");
+        System.out.println("|      How Is Strength Determined         |");
         System.out.println("===========================================");
         System.out.println("Strength is determinded by how full/");
         System.out.println("hungry/thirsty the user is, strength");

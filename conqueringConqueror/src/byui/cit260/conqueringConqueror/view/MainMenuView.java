@@ -13,21 +13,21 @@ import java.util.Scanner;
  *
  * @author Erika
  */
-public class MainMenuView {
+public abstract class MainMenuView extends View {
     
-    private final String menu = "\n"
+    public MainMenuView() {
+    
+            super ("\n************************************"
+            + "\n|             Main Menu            |"
+            + "\n************************************"
             + "\nN - New Game"
             + "\nL - Load Game"
             + "\nS - Save Game"
             + "\nH - Help Menu"
-            + "\nQ - Quit"
-            ;
-    
-    public MainMenuView(){
-        
+            + "\nQ - Quit");
     }
     
-    public void displayMenu(){
+    /*public void displayMenu(){
         
         char selection = ' ';
         
@@ -41,11 +41,13 @@ public class MainMenuView {
             
         } while(selection != 'Q');
         
-    }
+    }*/
     
-    public void doAction(char selection) {
+    public boolean doAction(String selection) {
         
-        switch(selection){
+        char charSel = selection.toUpperCase().charAt(0);
+        
+        switch(charSel){
             case 'N':
                 startNewGame();
                 break;
@@ -59,15 +61,16 @@ public class MainMenuView {
                 helpMenu();
                 break;
             case 'Q':
-                break;
+                return true;
+                
             default:
                 System.out.println("Invalid option");
                 break;
         }
-        
+        return false;
     }
     
-    public String getInput() {
+    /*public String getInput() {
         Scanner keyboard = new Scanner(System.in);
         String input = null;
         boolean isValid = false;
@@ -85,12 +88,12 @@ public class MainMenuView {
         }
         
         return input.toUpperCase();
-    }
+    }*/
 
     private void startNewGame() {
         ProgramController.createNewGame(ConqueringConqueror.getPlayer());
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        GameMenuView gameMenu = new GameMenuView() {};
+        gameMenu.display();
     }
 
     private void loadSavedGame() {
@@ -102,8 +105,8 @@ public class MainMenuView {
     }
 
     private void helpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        HelpMenuView helpMenu = new HelpMenuView() {};
+        helpMenu.display();
     }
     
 }

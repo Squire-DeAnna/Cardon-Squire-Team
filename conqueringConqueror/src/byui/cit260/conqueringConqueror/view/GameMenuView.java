@@ -11,8 +11,13 @@ import java.util.Scanner;
  *
  * @author Erika
  */
-public class GameMenuView {
-        private final String menu = "\n"
+public abstract class GameMenuView extends View {
+    
+    public GameMenuView() {
+     
+            super ("\n************************************"
+            + "\n|             Game Menu            |"
+            + "\n************************************"
             + "\nM - Map"
             + "\nI - Inventory"
             + "\nT - Travel"
@@ -24,14 +29,10 @@ public class GameMenuView {
             + "\nP - Team"
             + "\nS - Save"
             + "\nH - Help"
-            + "\nQ - Quit"
-            ;
-    
-    public GameMenuView(){
-        
+            + "\nQ - Quit");
     }
-    
-    public void displayMenu(){
+
+    /*public void displayMenu(){
         
         char selection = ' ';
         
@@ -45,11 +46,13 @@ public class GameMenuView {
             
         } while(selection != 'Q');
         
-    }
+    }*/
     
-    public void doAction(char selection) {
+    public boolean doAction(String selection) {
         
-        switch(selection){
+        char charSel = selection.toUpperCase().charAt(0);
+        
+        switch(charSel){
             case 'M':
                 map();
                 break;
@@ -84,15 +87,16 @@ public class GameMenuView {
                 helpMenu();
                 break;
             case 'Q':
-                break;
+                return true;
+                
             default:
                 System.out.println("Invalid option");
                 break;
         }
-        
+        return false;
     }
     
-    public String getInput() {
+    /*public String getInput() {
         Scanner keyboard = new Scanner(System.in);
         String input = null;
         boolean isValid = false;
@@ -110,15 +114,15 @@ public class GameMenuView {
         }
         
         return input.toUpperCase();
-    }
+    }*/
 
     private void map() {
         System.out.println("CALLED MAP - NOT IMPLEMENTED YET");
     }
 
     private void inventory() {
-        InventoryMenuView inventoryMenu = new InventoryMenuView();
-        inventoryMenu.displayMenu();
+        InventoryMenuView inventoryMenu = new InventoryMenuView() {};
+        inventoryMenu.display();
     }
 
     private void travel() {
@@ -156,7 +160,7 @@ public class GameMenuView {
     }
 
     private void helpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        HelpMenuView helpMenu = new HelpMenuView() {};
+        helpMenu.display();
     }
 }
