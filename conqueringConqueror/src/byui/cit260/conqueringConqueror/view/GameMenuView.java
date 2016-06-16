@@ -127,8 +127,8 @@ public class GameMenuView {
 
     private void explore() {
         //System.out.println("CALLED EXPLORE - NOT IMPLEMENTED YET");  
-        ExploreMenuView exploreMenu = new ExploreMenuView();  
-        exploreMenu.displayMenu();
+        ExploreMenuView exploreMenu = new ExploreMenuView() {};  
+        exploreMenu.display();
     }
 
     private void loot() {

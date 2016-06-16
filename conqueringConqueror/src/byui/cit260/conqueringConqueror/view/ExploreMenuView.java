@@ -5,16 +5,16 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Jason
  */
-public class ExploreMenuView {
+public abstract class ExploreMenuView extends View {
     
     
-    private final String menu = "\n"
+    public ExploreMenuView(){
+    
+              super("\n"
             + "\nA - Attack Enemy"
             + "\nF - Flee From Enemy"
             + "\nL - Collect Found Treasure"
@@ -22,14 +22,13 @@ public class ExploreMenuView {
             + "\nD - Take a Drink"
             + "\nS - Search curent location"
             + "\nI - Check current inventory"
-            + "\nQ - Quit to main menu"
-            ;
-    
-    public ExploreMenuView(){
-        
+            + "\nQ - Quit to main menu");
     }
     
-    public void displayMenu(){
+      
+    
+    
+    /*public void displayMenu(){
         
         char selection = ' ';
         
@@ -43,11 +42,14 @@ public class ExploreMenuView {
             
         } while(selection != 'Q');
         
-    }
+    }*/
     
-    public void doAction(char selection) {
+   
+    public boolean doAction(String selection) {
         
-        switch(selection){
+        char charSel = selection.toUpperCase().charAt(0);
+        
+        switch(charSel){
             case 'A':
                 attack();
                 break;
@@ -70,16 +72,16 @@ public class ExploreMenuView {
                 checkInventory();
                 break;
             case 'Q':
-                break;
+                return true;
             
             default:
                 System.out.println("Invalid option");
                 break;
         }
-        
+        return false;
     }
     
-    public String getInput() {
+    /*public String getInput() {
         Scanner keyboard = new Scanner(System.in);
         String input = null;
         boolean isValid = false;
@@ -97,7 +99,7 @@ public class ExploreMenuView {
         }
         
         return input.toUpperCase();
-    }
+    }*/
 
         private void attack() {
             System.out.println("You have chossen to attack the enemy " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
@@ -126,6 +128,11 @@ public class ExploreMenuView {
         private void checkInventory() {
             System.out.println("You have chossen to check your available inventory " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
         }
+
+    /*@Override
+    public char doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
 
 
     }  
