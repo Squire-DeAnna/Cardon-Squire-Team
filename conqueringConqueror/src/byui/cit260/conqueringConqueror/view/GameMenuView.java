@@ -131,7 +131,7 @@ public abstract class GameMenuView extends View {
 
     private void explore() {
         //System.out.println("CALLED EXPLORE - NOT IMPLEMENTED YET");  
-        ExploreMenuView exploreMenu = new ExploreMenuView() {};  
+        ExploreMenuView exploreMenu =  new ExploreMenuView() {};  
         exploreMenu.display();
     }
 
