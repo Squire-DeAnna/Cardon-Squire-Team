@@ -14,7 +14,9 @@ public abstract class ExploreMenuView extends View {
     
     public ExploreMenuView(){
     
-              super("\n"
+              super("\n************************************"
+            + "\n|             Explore Menu            |"
+            + "\n************************************"
             + "\nA - Attack Enemy"
             + "\nF - Flee From Enemy"
             + "\nL - Collect Found Treasure"
@@ -22,6 +24,7 @@ public abstract class ExploreMenuView extends View {
             + "\nD - Take a Drink"
             + "\nS - Search curent location"
             + "\nI - Check current inventory"
+            + "\nT - Choose a direction to travel"
             + "\nQ - Quit to main menu");
     }
     
@@ -70,6 +73,9 @@ public abstract class ExploreMenuView extends View {
                 break;
             case 'I':
                 checkInventory();
+                break;
+            case 'T':
+                travelDirection();
                 break;
             case 'Q':
                 return true;
@@ -133,6 +139,11 @@ public abstract class ExploreMenuView extends View {
     public char doAction(String value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
+
+    private void travelDirection() {
+       TravelMenuView travelMenu = new TravelMenuView(){};
+       travelMenu.display();
+    }
 
 
     }  

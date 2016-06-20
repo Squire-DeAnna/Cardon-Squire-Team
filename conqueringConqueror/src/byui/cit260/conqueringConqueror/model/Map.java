@@ -12,12 +12,14 @@ import java.io.Serializable;
  * @author Erika
  */
 public class Map implements Serializable{
+    
+    
    
     // class instance veriables
     private static final int NUM_ROWS = 5;
     private static final int NUM_COLS = 5;
     
-    private Location[][] matrix;
+    private final Location[][] matrix;
     
     public Map() {
         matrix = new Location[NUM_ROWS][NUM_COLS];

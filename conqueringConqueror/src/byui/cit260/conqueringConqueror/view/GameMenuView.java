@@ -5,6 +5,7 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import byui.cit260.conqueringConqueror.model.Map;
 import java.util.Scanner;
 
 /**
@@ -118,6 +119,8 @@ public abstract class GameMenuView extends View {
 
     private void map() {
         System.out.println("CALLED MAP - NOT IMPLEMENTED YET");
+        
+       
     }
 
     private void inventory() {
@@ -126,7 +129,8 @@ public abstract class GameMenuView extends View {
     }
 
     private void travel() {
-        System.out.println("CALLED TRAVEL - NOT IMPLEMENTED YET");
+        TravelMenuView travelMenu = new TravelMenuView() {};
+        travelMenu.display();
     }
 
     private void explore() {
@@ -140,7 +144,8 @@ public abstract class GameMenuView extends View {
     }
 
     private void attack() {
-        System.out.println("CALLED ATTACK - NOT IMPLEMENTED YET");
+       AttackMenuView attackMenu = new AttackMenuView(){};
+       attackMenu.display();
     }
 
     private void eatDrink() {
