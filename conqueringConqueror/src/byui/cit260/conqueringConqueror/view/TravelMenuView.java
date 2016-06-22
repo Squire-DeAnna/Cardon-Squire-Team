@@ -5,7 +5,6 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
-import byui.cit260.conqueringConqueror.model.Player;
 import static conqueringconqueror.ConqueringConqueror.getPlayer;
 
 /**
@@ -51,7 +50,9 @@ public abstract class TravelMenuView extends View{
     }
 
     private void goNorth() {
+      
         System.out.println(getPlayer().getName() + " has selected to go North");
+        
     }
 
     private void goSouth() {

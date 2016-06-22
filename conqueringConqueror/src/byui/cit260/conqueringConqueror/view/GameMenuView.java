@@ -5,9 +5,6 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
-import byui.cit260.conqueringConqueror.model.Map;
-import java.util.Scanner;
-
 /**
  *
  * @author Erika
@@ -118,9 +115,7 @@ public abstract class GameMenuView extends View {
     }*/
 
     private void map() {
-        System.out.println("CALLED MAP - NOT IMPLEMENTED YET");
-        
-       
+       System.out.println("CALLED MAP- NOT IMPLEMENTED YET");
     }
 
     private void inventory() {

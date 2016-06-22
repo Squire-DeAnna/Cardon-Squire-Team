@@ -28,4 +28,8 @@ public class Map implements Serializable{
     public Location getLocation(int row, int col){
         return matrix[row][col];
     }
+    
+   
 }
+    
+
