@@ -6,8 +6,12 @@
 package byui.cit260.conqueringConqueror.control;
 
 import byui.cit260.conqueringConqueror.model.Game;
+import byui.cit260.conqueringConqueror.model.Hero;
+import byui.cit260.conqueringConqueror.model.Map;
 import byui.cit260.conqueringConqueror.model.Player;
 import conqueringconqueror.ConqueringConqueror;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -29,7 +33,47 @@ public class ProgramController {
     public static void createNewGame(Player player) {
         Game game = new Game();
         game.setPlayer(player);
+        
+        Map gameMap = new Map();
+        game.setMap(gameMap);
+        
+        populateMapWithHeroes(gameMap);
+        
+        
+        player.setLocation(gameMap.getLocation(0, 0));
+        
         ConqueringConqueror.setGame(game);
+    }
+    
+    public static void populateMapWithHeroes(Map map) {
+        List<Hero> heroes = createHeroList();
+        
+        for(Hero h : heroes){
+            
+            int col = (int) (Math.random() * Map.NUM_COLS);
+            int row = (int) (Math.random() * Map.NUM_ROWS);
+            
+            map.getLocation(row, col).setHero(h);
+            
+            
+        }
+        
+    }
+    
+    public static List<Hero> createHeroList() {
+        
+        List<Hero> heroList = new ArrayList<>();
+        Hero wizard = new Hero();
+        wizard.setName("The Wizard");
+        wizard.setHitPoints(10);
+        
+        
+        Hero knight = new Hero();
+        knight.setName("The Knight");
+        knight.setHitPoints(8);
+        
+        
+        return heroList;
     }
     
 }

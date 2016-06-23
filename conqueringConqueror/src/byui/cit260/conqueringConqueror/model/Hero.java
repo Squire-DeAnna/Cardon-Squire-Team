@@ -20,6 +20,7 @@ public class Hero implements Serializable{
     private double hitPoints;
 
     public Hero() {
+        
     }
 
     public String getName() {
@@ -45,6 +46,7 @@ public class Hero implements Serializable{
     public void setHitPoints(double hitPoints) {
         this.hitPoints = hitPoints;
     }
+    
 
     @Override
     public int hashCode() {

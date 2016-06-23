@@ -23,6 +23,7 @@ public abstract class MainMenuView extends View {
             + "\nN - New Game"
             + "\nL - Load Game"
             + "\nS - Save Game"
+            + "\nV - View Map"
             + "\nH - Help Menu"
             + "\nQ - Quit");
     }
@@ -60,6 +61,9 @@ public abstract class MainMenuView extends View {
             case 'H':
                 helpMenu();
                 break;
+            case 'V':
+                viewMap();
+                break;
             case 'Q':
                 return true;
                 
@@ -92,6 +96,7 @@ public abstract class MainMenuView extends View {
 
     private void startNewGame() {
         ProgramController.createNewGame(ConqueringConqueror.getPlayer());
+        
         GameMenuView gameMenu = new GameMenuView() {};
         gameMenu.display();
     }
@@ -109,4 +114,7 @@ public abstract class MainMenuView extends View {
         helpMenu.display();
     }
     
+    private void viewMap() {
+        System.out.println(ConqueringConqueror.getGame().getMap().getMapString());
+    }
 }

@@ -22,21 +22,23 @@ public abstract class View implements ViewInterface {
         this.displayMessage = message;
     }
     
+    
     @Override
-    public void display(){
-        
-       boolean done = false;
-        
+    public void display() {
+
+        boolean done = false;
         do {
+            //prompt for and get players name
             String value = this.getInput();
-            if (value.toUpperCase().equals("Q")){
+            if (value.toUpperCase().equals("Q")) {
                 return;
             }
-            
-            done = this.doAction(value);            
-        } while(!done);
-        
+
+            done = this.doAction(value);
+        } while (!done);
+
     }
+        
     
     @Override
      public String getInput() {

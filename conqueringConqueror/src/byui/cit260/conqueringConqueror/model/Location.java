@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Location implements Serializable{
     
     // class instance variables
-    private String locationType;
+    private LocationType type;
     private String description;
     private boolean visited;
     private Item item;
@@ -25,12 +25,12 @@ public class Location implements Serializable{
     public Location() {
     }
 
-    public String getLocationType() {
-        return locationType;
+    public LocationType getType() {
+        return type;
     }
 
-    public void setLocationType(String locationType) {
-        this.locationType = locationType;
+    public void setType(LocationType type) {
+        this.type = type;
     }
 
     public String getDescription() {
@@ -73,55 +73,4 @@ public class Location implements Serializable{
         this.villain = villain;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.locationType);
-        hash = 97 * hash + Objects.hashCode(this.description);
-        hash = 97 * hash + Objects.hashCode(this.visited);
-        hash = 97 * hash + Objects.hashCode(this.item);
-        hash = 97 * hash + Objects.hashCode(this.hero);
-        hash = 97 * hash + Objects.hashCode(this.villain);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Location other = (Location) obj;
-        if (!Objects.equals(this.locationType, other.locationType)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.visited, other.visited)) {
-            return false;
-        }
-        if (!Objects.equals(this.item, other.item)) {
-            return false;
-        }
-        if (!Objects.equals(this.hero, other.hero)) {
-            return false;
-        }
-        if (!Objects.equals(this.villain, other.villain)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" + "locationType=" + locationType + ", description=" + description + ", visited=" + visited + ", item=" + item + ", hero=" + hero + ", villain=" + villain + '}';
-    }
-    
-    
 }

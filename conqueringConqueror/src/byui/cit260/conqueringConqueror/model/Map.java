@@ -16,13 +16,44 @@ public class Map implements Serializable{
     
    
     // class instance veriables
-    private static final int NUM_ROWS = 5;
-    private static final int NUM_COLS = 5;
+    public static final int NUM_ROWS = 5;
+    public static final int NUM_COLS = 5;
     
-    private final Location[][] matrix;
+    private Location[][] matrix;
     
     public Map() {
         matrix = new Location[NUM_ROWS][NUM_COLS];
+        init();
+    }
+    
+    public void init() {
+
+        for (int row = 0; row < NUM_ROWS; row++) {
+            for (int col = 0; col < NUM_COLS; col++) {
+                Location loc = new Location();
+
+                //Create a random location type
+                loc.setType(LocationType.values()[(int) (Math.random() * LocationType.values().length)]);
+
+                matrix[row][col] = loc;
+            }
+        }
+    }
+    
+    public String getMapString() {
+
+        String rtn = "";
+
+        for (int row = 0; row < NUM_ROWS; row++) {
+            for (int col = 0; col < NUM_COLS; col++) {
+                rtn += matrix[row][col].getType().name().charAt(0) + "\t";
+                
+                }
+                
+                rtn += "\t";
+        }
+
+        return rtn;
     }
     
     public Location getLocation(int row, int col){

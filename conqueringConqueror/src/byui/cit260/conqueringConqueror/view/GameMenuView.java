@@ -5,6 +5,8 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import conqueringconqueror.ConqueringConqueror;
+
 /**
  *
  * @author Erika
@@ -52,7 +54,7 @@ public abstract class GameMenuView extends View {
         
         switch(charSel){
             case 'M':
-                map();
+                viewMap();
                 break;
             case 'I':
                 inventory();
@@ -114,8 +116,8 @@ public abstract class GameMenuView extends View {
         return input.toUpperCase();
     }*/
 
-    private void map() {
-       System.out.println("CALLED MAP- NOT IMPLEMENTED YET");
+    private void viewMap() {
+        System.out.println(ConqueringConqueror.getGame().getMap().getMapString());
     }
 
     private void inventory() {

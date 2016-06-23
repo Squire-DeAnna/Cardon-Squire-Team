@@ -124,6 +124,10 @@ public class Player implements Serializable {
     public String toString() {
         return "Player{" + "name=" + name + ", strength=" + strength + ", maxStrength=" + maxStrength + ", currentCarry=" + currentCarry + ", maxWeight=" + maxCarry + '}';
     }
+
+    public void setLocation(Location location) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
