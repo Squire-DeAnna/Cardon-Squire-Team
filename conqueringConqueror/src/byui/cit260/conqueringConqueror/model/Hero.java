@@ -17,7 +17,8 @@ public class Hero implements Serializable{
     // class instance variables
     private String name;
     private String description;
-    private double hitPoints;
+    private double attackPoints;
+    private double health;
 
     public Hero() {
         
@@ -39,21 +40,28 @@ public class Hero implements Serializable{
         this.description = description;
     }
 
-    public double getHitPoints() {
-        return hitPoints;
+    public double getAttackPoints() {
+        return attackPoints;
     }
 
-    public void setHitPoints(double hitPoints) {
-        this.hitPoints = hitPoints;
+    public void setAttackPoints(double attackPoints) {
+        this.attackPoints = attackPoints;
     }
-    
+
+    public double getHealth() {
+        return health;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
+    }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 37 * hash + Objects.hashCode(this.name);
         hash = 37 * hash + Objects.hashCode(this.description);
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.hitPoints) ^ (Double.doubleToLongBits(this.hitPoints) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.attackPoints) ^ (Double.doubleToLongBits(this.attackPoints) >>> 32));
         return hash;
     }
 
@@ -69,7 +77,7 @@ public class Hero implements Serializable{
             return false;
         }
         final Hero other = (Hero) obj;
-        if (Double.doubleToLongBits(this.hitPoints) != Double.doubleToLongBits(other.hitPoints)) {
+        if (Double.doubleToLongBits(this.attackPoints) != Double.doubleToLongBits(other.attackPoints)) {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
@@ -83,7 +91,7 @@ public class Hero implements Serializable{
 
     @Override
     public String toString() {
-        return "Hero{" + "name=" + name + ", description=" + description + ", hitPoints=" + hitPoints + '}';
+        return "Hero{" + "name=" + name + ", description=" + description + ", attackPoints=" + attackPoints + '}';
     }
     
 }

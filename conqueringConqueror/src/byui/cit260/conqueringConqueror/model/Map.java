@@ -46,11 +46,15 @@ public class Map implements Serializable{
 
         for (int row = 0; row < NUM_ROWS; row++) {
             for (int col = 0; col < NUM_COLS; col++) {
-                rtn += matrix[row][col].getType().name().charAt(0) + "\t";
+                rtn += matrix[row][col].getType().name().charAt(0);
                 
+                // pull out everything through rtn + tab and add tab back to the line preceeding this comment
+                if(matrix[row][col].getHero() != null) {
+                    rtn += matrix[row][col].getHero().getName().charAt(0);
                 }
-                
                 rtn += "\t";
+            }
+            rtn += "\n";
         }
 
         return rtn;

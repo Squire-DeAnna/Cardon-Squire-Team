@@ -79,6 +79,14 @@ public class Player implements Serializable {
         this.maxCarry = maxCarry;
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
     @Override
     public int hashCode() {
         int hash = 3;
@@ -125,9 +133,6 @@ public class Player implements Serializable {
         return "Player{" + "name=" + name + ", strength=" + strength + ", maxStrength=" + maxStrength + ", currentCarry=" + currentCarry + ", maxWeight=" + maxCarry + '}';
     }
 
-    public void setLocation(Location location) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     
 }

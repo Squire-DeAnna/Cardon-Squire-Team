@@ -5,6 +5,7 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import conqueringconqueror.ConqueringConqueror;
 import static conqueringconqueror.ConqueringConqueror.getPlayer;
 
 /**
@@ -21,7 +22,9 @@ public abstract class TravelMenuView extends View{
             + "\nN - Go North"
             + "\nS - Go South"
             + "\nE - Go East"
-            + "\nW - Go West");
+            + "\nW - Go West"
+            + "\nV - View Map"
+            + "\nQ - Quit");
     }
     
      public boolean doAction(String selection) {
@@ -41,7 +44,12 @@ public abstract class TravelMenuView extends View{
             case 'E':
                 goEast();
                 break;
-                        
+            case 'V':
+                viewMap();
+                break;
+            case 'Q':
+                return true;
+                
             default:
                 System.out.println("Invalid option");
                 break;
@@ -51,8 +59,7 @@ public abstract class TravelMenuView extends View{
 
     private void goNorth() {
       
-        System.out.println(getPlayer().getName() + " has selected to go North");
-        
+        System.out.println(getPlayer().getName() + " has selected to go North");   
     }
 
     private void goSouth() {
@@ -65,6 +72,10 @@ public abstract class TravelMenuView extends View{
 
     private void goEast() {
         System.out.println(getPlayer().getName() + " has selected to go East");
+    }
+
+    private void viewMap() {
+        System.out.println(ConqueringConqueror.getGame().getMap().getMapString());
     }
     
 }

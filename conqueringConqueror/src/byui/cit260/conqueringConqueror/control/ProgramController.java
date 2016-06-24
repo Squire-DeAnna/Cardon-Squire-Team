@@ -39,23 +39,33 @@ public class ProgramController {
         
         populateMapWithHeroes(gameMap);
         
-        
         player.setLocation(gameMap.getLocation(0, 0));
         
         ConqueringConqueror.setGame(game);
     }
     
     public static void populateMapWithHeroes(Map map) {
+        
         List<Hero> heroes = createHeroList();
         
         for(Hero h : heroes){
             
-            int col = (int) (Math.random() * Map.NUM_COLS);
-            int row = (int) (Math.random() * Map.NUM_ROWS);
+            boolean success = false;
             
-            map.getLocation(row, col).setHero(h);
-            
-            
+            do {
+                int col = (int) (Math.random() * Map.NUM_COLS);
+                int row = (int) (Math.random() * Map.NUM_ROWS);
+                
+                success = false;
+                
+                if(map.getLocation(row, col).getHero() == null) {
+                    map.getLocation(row, col).setHero(h);
+                    success = true;
+                }
+                
+                map.getLocation(row, col).setHero(h);
+            } while(success == false);
+    
         }
         
     }
@@ -63,15 +73,25 @@ public class ProgramController {
     public static List<Hero> createHeroList() {
         
         List<Hero> heroList = new ArrayList<>();
+        
         Hero wizard = new Hero();
-        wizard.setName("The Wizard");
-        wizard.setHitPoints(10);
+        wizard.setName("Wizard");
+        wizard.setAttackPoints(10);
+        wizard.setHealth(40);
+        heroList.add(wizard);
         
         
         Hero knight = new Hero();
-        knight.setName("The Knight");
-        knight.setHitPoints(8);
+        knight.setName("Knight");
+        knight.setAttackPoints(8);
+        knight.setHealth(35);
+        heroList.add(knight);
         
+        Hero akki = new Hero();
+        akki.setName("Akki");
+        akki.setAttackPoints(9);
+        akki.setHealth(30);
+        heroList.add(akki);
         
         return heroList;
     }
