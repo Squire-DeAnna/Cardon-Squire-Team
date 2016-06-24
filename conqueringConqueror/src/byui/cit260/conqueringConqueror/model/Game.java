@@ -18,7 +18,7 @@ public class Game implements Serializable{
     // class instance variables
     private double totalTime;
     // I know that is not correct, but using it as a placeholder.
-
+    private Map map;
     
     public Game() {
     }
