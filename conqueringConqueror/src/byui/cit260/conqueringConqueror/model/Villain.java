@@ -17,7 +17,8 @@ public class Villain implements Serializable{
     // class instance variables
     private String name;
     private String description;
-    private double hitPoints;
+    private double attackPoints;
+    private double health;
 
     public Villain() {
     }
@@ -38,12 +39,20 @@ public class Villain implements Serializable{
         this.description = description;
     }
 
-    public double getHitPoints() {
-        return hitPoints;
+    public double getAttackPoints() {
+        return attackPoints;
     }
 
-    public void setHitPoints(double hitPoints) {
-        this.hitPoints = hitPoints;
+    public void setAttackPoints(double attackPoints) {
+        this.attackPoints = attackPoints;
+    }
+
+    public double getHealth() {
+        return health;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
     }
 
     @Override
@@ -51,7 +60,7 @@ public class Villain implements Serializable{
         int hash = 5;
         hash = 19 * hash + Objects.hashCode(this.name);
         hash = 19 * hash + Objects.hashCode(this.description);
-        hash = 19 * hash + (int) (Double.doubleToLongBits(this.hitPoints) ^ (Double.doubleToLongBits(this.hitPoints) >>> 32));
+        hash = 19 * hash + (int) (Double.doubleToLongBits(this.attackPoints) ^ (Double.doubleToLongBits(this.attackPoints) >>> 32));
         return hash;
     }
 
@@ -67,7 +76,7 @@ public class Villain implements Serializable{
             return false;
         }
         final Villain other = (Villain) obj;
-        if (Double.doubleToLongBits(this.hitPoints) != Double.doubleToLongBits(other.hitPoints)) {
+        if (Double.doubleToLongBits(this.attackPoints) != Double.doubleToLongBits(other.attackPoints)) {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
@@ -81,7 +90,7 @@ public class Villain implements Serializable{
 
     @Override
     public String toString() {
-        return "Villain{" + "name=" + name + ", description=" + description + ", hitPoints=" + hitPoints + '}';
+        return "Villain{" + "name=" + name + ", description=" + description + ", attackPoints=" + attackPoints + '}';
     }
     
 }

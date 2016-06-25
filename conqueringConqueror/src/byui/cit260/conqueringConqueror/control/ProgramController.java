@@ -69,6 +69,32 @@ public class ProgramController {
         }
         
     }
+        // may need to do villain differently since they aren't added to the heroes "team"
+        /*public static void populateMapWithVillains(Map map) {
+        
+        List<Villain> villain = createVillainList();
+        
+        for(Villain v : villains){
+            
+            boolean success = false;
+            
+            do {
+                int col = (int) (Math.random() * Map.NUM_COLS);
+                int row = (int) (Math.random() * Map.NUM_ROWS);
+                
+                success = false;
+                
+                if(map.getLocation(row, col).getVillain() == null) {
+                    map.getLocation(row, col).setHero(h);
+                    success = true;
+                }
+                
+                map.getLocation(row, col).setHero(h);
+            } while(success == false);
+    
+        }
+        
+    }*/
     
     public static List<Hero> createHeroList() {
         
@@ -95,5 +121,31 @@ public class ProgramController {
         
         return heroList;
     }
+    
+    /*public static List<Villain> createVillainList() {
+        
+        List<Villain> villainList = new ArrayList<>();
+        
+        Hero lugalzagesi = new Villain();
+        lugalzagesi.setName("Lugalzagesi");
+        lugalzagesi.setAttackPoints(10);
+        lugalzagesi.setHealth(40);
+        villainList.add(lugalzagesi);
+        
+        
+        Hero umma = new Villain();
+        umma.setName("Umma");
+        umma.setAttackPoints(8);
+        umma.setHealth(35);
+        villainList.add(umma);
+        
+        Hero zababa = new Villain();
+        zababa.setName("Zababa");
+        zababa.setAttackPoints(9);
+        zababa.setHealth(30);
+        villainList.add(zababa);
+        
+        return villainList;
+    }*/
     
 }

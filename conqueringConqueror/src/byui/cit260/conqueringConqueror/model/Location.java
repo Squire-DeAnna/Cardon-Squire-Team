@@ -21,6 +21,8 @@ public class Location implements Serializable{
     private Item item;
     private Hero hero;
     private Villain villain;
+    private int row;
+    private int col;
 
     public Location() {
     }
@@ -71,6 +73,22 @@ public class Location implements Serializable{
 
     public void setVillain(Villain villain) {
         this.villain = villain;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
     }
 
 }

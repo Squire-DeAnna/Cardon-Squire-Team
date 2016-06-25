@@ -5,6 +5,8 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import byui.cit260.conqueringConqueror.control.MovementControl;
+import byui.cit260.conqueringConqueror.model.Location;
 import conqueringconqueror.ConqueringConqueror;
 import static conqueringconqueror.ConqueringConqueror.getPlayer;
 
@@ -23,7 +25,8 @@ public abstract class TravelMenuView extends View{
             + "\nS - Go South"
             + "\nE - Go East"
             + "\nW - Go West"
-            + "\nV - View Map"
+            + "\nM - View Map"
+            + "\nL - View Location"
             + "\nQ - Quit");
     }
     
@@ -44,8 +47,11 @@ public abstract class TravelMenuView extends View{
             case 'E':
                 goEast();
                 break;
-            case 'V':
+            case 'M':
                 viewMap();
+                break;
+            case 'L':
+                viewLocation();
                 break;
             case 'Q':
                 return true;
@@ -58,24 +64,40 @@ public abstract class TravelMenuView extends View{
     }
 
     private void goNorth() {
-      
-        System.out.println(getPlayer().getName() + " has selected to go North");   
+        MovementControl mc = new MovementControl();
+        if(mc.moveNorth(ConqueringConqueror.getGame()) == false) {
+            System.out.println("You cannot move north.");
+        }
     }
 
     private void goSouth() {
-        System.out.println(getPlayer().getName() + " has selected to go South");
+        MovementControl mc = new MovementControl();
+        if(mc.moveSouth(ConqueringConqueror.getGame()) == false) {
+            System.out.println("You cannot move south.");
+        }
     }
 
     private void goWest() {
-        System.out.println(getPlayer().getName() + " has selected to go West");
+        MovementControl mc = new MovementControl();
+        if(mc.moveWest(ConqueringConqueror.getGame()) == false) {
+            System.out.println("You cannot move west.");
+        }
     }
 
     private void goEast() {
-        System.out.println(getPlayer().getName() + " has selected to go East");
+        MovementControl mc = new MovementControl();
+        if(mc.moveEast(ConqueringConqueror.getGame()) == false) {
+            System.out.println("You cannot move east.");
+        }
     }
 
     private void viewMap() {
         System.out.println(ConqueringConqueror.getGame().getMap().getMapString());
+    }
+
+    private void viewLocation() {
+        Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
+        System.out.println("You are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
     
 }
