@@ -23,6 +23,8 @@ public class Location implements Serializable{
     private Villain villain;
     private int row;
     private int col;
+    private FoodType foodType;
+    private DrinkType drinkType;
 
     public Location() {
     }
@@ -90,5 +92,23 @@ public class Location implements Serializable{
     public void setCol(int col) {
         this.col = col;
     }
+
+    public FoodType getFoodType() {
+        return foodType;
+    }
+
+    public void setFoodType(FoodType foodType) {
+        this.foodType = foodType;
+    }
+
+    public DrinkType getDrinkType() {
+        return drinkType;
+    }
+
+    public void setDrinkType(DrinkType drinkType) {
+        this.drinkType = drinkType;
+    }
+    
+    
 
 }
