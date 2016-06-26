@@ -31,22 +31,6 @@ public abstract class GameMenuView extends View {
             + "\nH - Help"
             + "\nQ - Quit");
     }
-
-    /*public void displayMenu(){
-        
-        char selection = ' ';
-        
-        do {
-            System.out.println(menu);
-            
-            String input = getInput();
-            selection = input.charAt(0);
-            
-            doAction(selection);
-            
-        } while(selection != 'Q');
-        
-    }*/
     
     public boolean doAction(String selection) {
         
@@ -95,26 +79,6 @@ public abstract class GameMenuView extends View {
         }
         return false;
     }
-    
-    /*public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-        
-        while(!isValid){
-            System.out.println("Please select an option:");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input == null || input.length() == 0){
-                System.out.println("Invalid input - please enter a valid character.");
-            } else {
-                isValid = true;
-            }
-        }
-        
-        return input.toUpperCase();
-    }*/
 
     private void viewMap() {
         System.out.println(ConqueringConqueror.getGame().getMap().getMapString());

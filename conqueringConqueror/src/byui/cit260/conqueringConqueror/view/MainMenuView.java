@@ -23,26 +23,9 @@ public abstract class MainMenuView extends View {
             + "\nN - New Game"
             + "\nL - Load Game"
             + "\nS - Save Game"
-            + "\nV - View Map"
             + "\nH - Help Menu"
             + "\nQ - Quit");
     }
-    
-    /*public void displayMenu(){
-        
-        char selection = ' ';
-        
-        do {
-            System.out.println(menu);
-            
-            String input = getInput();
-            selection = input.charAt(0);
-            
-            doAction(selection);
-            
-        } while(selection != 'Q');
-        
-    }*/
     
     public boolean doAction(String selection) {
         
@@ -61,9 +44,6 @@ public abstract class MainMenuView extends View {
             case 'H':
                 helpMenu();
                 break;
-            case 'V':
-                viewMap();
-                break;
             case 'Q':
                 return true;
                 
@@ -73,26 +53,6 @@ public abstract class MainMenuView extends View {
         }
         return false;
     }
-    
-    /*public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-        
-        while(!isValid){
-            System.out.println("Please select an option:");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input == null || input.length() == 0){
-                System.out.println("Invalid input - please enter a valid character.");
-            } else {
-                isValid = true;
-            }
-        }
-        
-        return input.toUpperCase();
-    }*/
 
     private void startNewGame() {
         ProgramController.createNewGame(ConqueringConqueror.getPlayer());
@@ -113,8 +73,5 @@ public abstract class MainMenuView extends View {
         HelpMenuView helpMenu = new HelpMenuView() {};
         helpMenu.display();
     }
-    
-    private void viewMap() {
-        System.out.println(ConqueringConqueror.getGame().getMap().getMapString());
-    }
+
 }
