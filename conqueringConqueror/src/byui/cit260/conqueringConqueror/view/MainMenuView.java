@@ -7,6 +7,7 @@ package byui.cit260.conqueringConqueror.view;
 
 import byui.cit260.conqueringConqueror.control.ProgramController;
 import conqueringconqueror.ConqueringConqueror;
+import static conqueringconqueror.ConqueringConqueror.getPlayer;
 import java.util.Scanner;
 
 /**
@@ -56,6 +57,8 @@ public abstract class MainMenuView extends View {
 
     private void startNewGame() {
         ProgramController.createNewGame(ConqueringConqueror.getPlayer());
+        
+        System.out.println("Welcome, " + getPlayer().getName() + "!");
         
         GameMenuView gameMenu = new GameMenuView() {};
         gameMenu.display();
