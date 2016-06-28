@@ -9,6 +9,7 @@ import byui.cit260.conqueringConqueror.model.Game;
 import byui.cit260.conqueringConqueror.model.Hero;
 import byui.cit260.conqueringConqueror.model.Map;
 import byui.cit260.conqueringConqueror.model.Player;
+import byui.cit260.conqueringConqueror.model.Villain;
 import conqueringconqueror.ConqueringConqueror;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,8 @@ public class ProgramController {
         game.setMap(gameMap);
         
         populateMapWithHeroes(gameMap);
+        
+        populateMapWithVillains(gameMap);
         
         player.setLocation(gameMap.getLocation(0, 0));
         
@@ -70,9 +73,9 @@ public class ProgramController {
         
     }
         // may need to do villain differently since they aren't added to the heroes "team"
-        /*public static void populateMapWithVillains(Map map) {
+        public static void populateMapWithVillains(Map map) {
         
-        List<Villain> villain = createVillainList();
+        List<Villain> villains = createVillainList();
         
         for(Villain v : villains){
             
@@ -84,17 +87,17 @@ public class ProgramController {
                 
                 success = false;
                 
-                if(map.getLocation(row, col).getVillain() == null) {
-                    map.getLocation(row, col).setHero(h);
+                if(map.getLocation(row, col).getVillain() == null || map.getLocation(row, col).getHero() == null) {
+                    map.getLocation(row, col).setVillain(v);
                     success = true;
                 }
                 
-                map.getLocation(row, col).setHero(h);
+                map.getLocation(row, col).setVillain(v);
             } while(success == false);
     
         }
         
-    }*/
+    }
     
     public static List<Hero> createHeroList() {
         
@@ -122,30 +125,30 @@ public class ProgramController {
         return heroList;
     }
     
-    /*public static List<Villain> createVillainList() {
+    public static List<Villain> createVillainList() {
         
         List<Villain> villainList = new ArrayList<>();
         
-        Hero lugalzagesi = new Villain();
+        Villain lugalzagesi = new Villain();
         lugalzagesi.setName("Lugalzagesi");
         lugalzagesi.setAttackPoints(10);
         lugalzagesi.setHealth(40);
         villainList.add(lugalzagesi);
         
         
-        Hero umma = new Villain();
+        Villain umma = new Villain();
         umma.setName("Umma");
         umma.setAttackPoints(8);
         umma.setHealth(35);
         villainList.add(umma);
         
-        Hero zababa = new Villain();
+        Villain zababa = new Villain();
         zababa.setName("Zababa");
         zababa.setAttackPoints(9);
         zababa.setHealth(30);
         villainList.add(zababa);
         
         return villainList;
-    }*/
+    }
     
 }

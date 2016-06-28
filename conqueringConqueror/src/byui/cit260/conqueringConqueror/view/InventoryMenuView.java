@@ -90,15 +90,15 @@ public abstract class InventoryMenuView extends View {
     }*/
 
     private void weapons() {
-        System.out.println("CALLED WEAPONS - NOT IMPLEMENTED YET");
+        System.out.println("\nCALLED WEAPONS - NOT IMPLEMENTED YET");
     }
 
     private void food() {
-        System.out.println("CALLED FOOD - NOT IMPLEMENTED YET");
+        System.out.println("\nCALLED FOOD - NOT IMPLEMENTED YET");
     }
 
     private void saveCurrentGame() {
-        System.out.println("CALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
+        System.out.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
     }
 
     private void helpMenu() {

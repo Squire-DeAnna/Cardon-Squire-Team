@@ -58,18 +58,19 @@ public abstract class MainMenuView extends View {
     private void startNewGame() {
         ProgramController.createNewGame(ConqueringConqueror.getPlayer());
         
-        System.out.println("Welcome, " + getPlayer().getName() + "!");
+        System.out.println("\nWelcome, " + getPlayer().getName() + "!"
+            +"\nAre you ready to conquer the conqueror?!");
         
         GameMenuView gameMenu = new GameMenuView() {};
         gameMenu.display();
     }
 
     private void loadSavedGame() {
-        System.out.println("CALLED LOAD NEW GAME - NOT IMPLEMENTED YET");
+        System.out.println("\nCALLED LOAD NEW GAME - NOT IMPLEMENTED YET");
     }
 
     private void saveCurrentGame() {
-        System.out.println("CALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
+        System.out.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
     }
 
     private void helpMenu() {

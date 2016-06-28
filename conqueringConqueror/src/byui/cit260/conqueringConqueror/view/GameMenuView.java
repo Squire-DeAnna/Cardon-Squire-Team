@@ -81,7 +81,7 @@ public abstract class GameMenuView extends View {
     }
 
     private void viewMap() {
-        System.out.println(ConqueringConqueror.getGame().getMap().getMapString());
+        System.out.println("\n" + ConqueringConqueror.getGame().getMap().getMapString());
     }
 
     private void inventory() {
@@ -110,19 +110,19 @@ public abstract class GameMenuView extends View {
     }
 
     private void eatDrink() {
-        System.out.println("CALLED EAT/DRINK - NOT IMPLEMENTED YET");
+        System.out.println("\nCALLED EAT/DRINK - NOT IMPLEMENTED YET");
     }
 
     private void weapons() {
-        System.out.println("CALLED WEAPONS - NOT IMPLEMENTED YET");
+        System.out.println("\nCALLED WEAPONS - NOT IMPLEMENTED YET");
     }
 
     private void team() {
-        System.out.println("CALLED TEAM - NOT IMPLEMENTED YET");
+        System.out.println("\nCALLED TEAM - NOT IMPLEMENTED YET");
     }
 
     private void saveCurrentGame() {
-        System.out.println("CALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");        
+        System.out.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");        
     }
 
     private void helpMenu() {

@@ -66,38 +66,38 @@ public abstract class TravelMenuView extends View{
     private void goNorth() {
         MovementControl mc = new MovementControl();
         if(mc.moveNorth(ConqueringConqueror.getGame()) == false) {
-            System.out.println("You cannot move north.");
+            System.out.println("\nYou cannot move north.");
         }
     }
 
     private void goSouth() {
         MovementControl mc = new MovementControl();
         if(mc.moveSouth(ConqueringConqueror.getGame()) == false) {
-            System.out.println("You cannot move south.");
+            System.out.println("\nYou cannot move south.");
         }
     }
 
     private void goWest() {
         MovementControl mc = new MovementControl();
         if(mc.moveWest(ConqueringConqueror.getGame()) == false) {
-            System.out.println("You cannot move west.");
+            System.out.println("\nYou cannot move west.");
         }
     }
 
     private void goEast() {
         MovementControl mc = new MovementControl();
         if(mc.moveEast(ConqueringConqueror.getGame()) == false) {
-            System.out.println("You cannot move east.");
+            System.out.println("\nYou cannot move east.");
         }
     }
 
     private void viewMap() {
-        System.out.println(ConqueringConqueror.getGame().getMap().getMapString());
+        System.out.println("\n" + ConqueringConqueror.getGame().getMap().getMapString());
     }
 
     private void viewLocation() {
         Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
-        System.out.println("You are at: (" + l.getRow() + ", " + l.getCol() + ")");
+        System.out.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
     
 }

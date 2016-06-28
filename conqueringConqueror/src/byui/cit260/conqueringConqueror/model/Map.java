@@ -51,8 +51,14 @@ public class Map implements Serializable{
                 rtn += matrix[row][col].getType().name().charAt(0);
                 
                 // pull out everything through rtn + tab and add tab back to the line preceeding this comment
+                // see heroes
                 if(matrix[row][col].getHero() != null) {
                     rtn += matrix[row][col].getHero().getName().charAt(0);
+                }
+                
+                // see villains
+                if(matrix[row][col].getVillain() != null) {
+                    rtn += matrix[row][col].getVillain().getName().charAt(0);
                 }
                 rtn += "\t";
             }
