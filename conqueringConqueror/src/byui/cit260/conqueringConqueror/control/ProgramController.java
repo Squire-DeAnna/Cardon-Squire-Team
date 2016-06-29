@@ -61,12 +61,11 @@ public class ProgramController {
                 
                 success = false;
                 
-                if(map.getLocation(row, col).getHero() == null) {
+                if(map.getLocation(row, col).getHero() == null && map.getLocation(row, col).getVillain() == null) {
                     map.getLocation(row, col).setHero(h);
                     success = true;
                 }
                 
-                map.getLocation(row, col).setHero(h);
             } while(success == false);
     
         }
@@ -87,12 +86,11 @@ public class ProgramController {
                 
                 success = false;
                 
-                if(map.getLocation(row, col).getVillain() == null || map.getLocation(row, col).getHero() == null) {
+                if(map.getLocation(row, col).getVillain() == null && map.getLocation(row, col).getHero() == null) {
                     map.getLocation(row, col).setVillain(v);
                     success = true;
                 }
                 
-                map.getLocation(row, col).setVillain(v);
             } while(success == false);
     
         }
