@@ -10,7 +10,7 @@ package byui.cit260.conqueringConqueror.model;
  * @author Jason
  */
 public enum FoodType {
-    Deer,
+    Venison,
     Goat,
     Dates,
     Grapes,

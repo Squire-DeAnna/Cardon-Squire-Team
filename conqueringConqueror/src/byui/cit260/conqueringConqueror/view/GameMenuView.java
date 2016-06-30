@@ -24,7 +24,6 @@ public abstract class GameMenuView extends View {
             + "\nE - Explore"
             + "\nA - Attack"
             + "\nL - Loot"
-            + "\nF - Eat/Drink"
             + "\nW - Weapons"
             + "\nP - Team"
             + "\nS - Save"
@@ -54,9 +53,6 @@ public abstract class GameMenuView extends View {
                 break;
             case 'L':
                 loot();
-                break;
-            case 'F':
-                eatDrink();
                 break;
             case 'W':
                 weapons();
@@ -118,7 +114,8 @@ public abstract class GameMenuView extends View {
     }
 
     private void team() {
-        System.out.println("\nCALLED TEAM - NOT IMPLEMENTED YET");
+        TeamMenuView teamMenu = new TeamMenuView() {};
+        teamMenu.display();
     }
 
     private void saveCurrentGame() {

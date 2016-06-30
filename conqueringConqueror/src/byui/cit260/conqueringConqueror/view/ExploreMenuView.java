@@ -5,6 +5,8 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import conqueringconqueror.ConqueringConqueror;
+
 /**
  *
  * @author Jason
@@ -108,7 +110,8 @@ public abstract class ExploreMenuView extends View {
     }*/
 
         private void attack() {
-            System.out.println("You have chossen to attack the enemy " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        AttackMenuView attackMenu = new AttackMenuView() {};
+        attackMenu.display();
         }
 
         private void flee() {
@@ -120,19 +123,26 @@ public abstract class ExploreMenuView extends View {
         }
 
         private void eatFood() {
-            System.out.println("You have chossen to eat food and restore your energy " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+            EatMenuView eatMenu = new EatMenuView() {};
+        eatMenu.display();
         }
 
         private void drinkWater() {
-            System.out.println("You have chossen to drink water and refresh your energy " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        DrinkMenuView drinkMenu = new DrinkMenuView() {};
+        drinkMenu.display();
         }
 
         private void searchLocation() {
-            System.out.println("You have chossen to search your present location " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+            //System.out.println("You have chossen to search your present location " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+            if(ConqueringConqueror.getPlayer().getLocation().getHero() != null){
+                RecruitHeroView rhv = new RecruitHeroView();
+                rhv.display();
+            }
         }
 
         private void checkInventory() {
-            System.out.println("You have chossen to check your available inventory " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+            InventoryMenuView inventoryMenu = new InventoryMenuView() {};
+        inventoryMenu.display();
         }
 
     /*@Override

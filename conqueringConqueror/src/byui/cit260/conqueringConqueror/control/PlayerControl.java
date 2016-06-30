@@ -64,7 +64,25 @@ public class PlayerControl {
 		return maxStrength;
         }
 
-	strength = strength + foodStrength;
+	foodStrength = 2;
+        strength = strength + foodStrength;
+
+	return strength;
+    }
+    
+    public double calcPlayerStrengthAfterDrink(double strength, 
+            double foodStrength, double maxStrength){
+
+	if (strength <= 0.0) {
+		return -1.0;
+        }
+
+	if (strength >= maxStrength) {
+		return maxStrength;
+        }
+
+	foodStrength = 1;
+        strength = strength + foodStrength;
 
 	return strength;
     }

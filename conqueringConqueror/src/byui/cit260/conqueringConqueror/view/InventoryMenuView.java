@@ -19,7 +19,7 @@ public abstract class InventoryMenuView extends View {
             + "\n|          Inventory Menu          |"
             + "\n************************************"
             + "\nW - Weapons"
-            + "\nF - Food"
+            + "\nF - Food/Drink"
             + "\nS - Save"
             + "\nH - Help"
             + "\nQ - Quit");
@@ -51,7 +51,7 @@ public abstract class InventoryMenuView extends View {
                 weapons();
                 break;
             case 'F':
-                food();
+                foodMenu();
                 break;
             case 'S':
                 saveCurrentGame();
@@ -93,8 +93,9 @@ public abstract class InventoryMenuView extends View {
         System.out.println("\nCALLED WEAPONS - NOT IMPLEMENTED YET");
     }
 
-    private void food() {
-        System.out.println("\nCALLED FOOD - NOT IMPLEMENTED YET");
+    private void foodMenu() {
+        FoodDrinkMenuView foodMenu = new FoodDrinkMenuView() {};
+        foodMenu.display();
     }
 
     private void saveCurrentGame() {
