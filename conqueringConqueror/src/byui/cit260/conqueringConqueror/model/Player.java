@@ -25,6 +25,8 @@ public class Player implements Serializable {
     List<Item> inventory;
     List<Hero> team;
     Location location;
+    Food food;
+    Drink drink;
 
     public Player() {
         inventory = new ArrayList<>();
@@ -86,6 +88,26 @@ public class Player implements Serializable {
     public void setLocation(Location location) {
         this.location = location;
     }
+
+    public Food getFood() {
+        return food;
+    }
+
+    public void setFood(Food food) {
+        this.food = food;
+    }
+
+    public Drink getDrink() {
+        return drink;
+    }
+
+    public void setDrink(Drink drink) {
+        this.drink = drink;
+    }
+    
+    
+    
+    
 
     @Override
     public int hashCode() {

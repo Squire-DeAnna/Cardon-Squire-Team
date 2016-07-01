@@ -15,6 +15,7 @@ public class Game implements Serializable{
     
     private Player player;
     
+    
     // class instance variables
     private double totalTime;
     // I know that is not correct, but using it as a placeholder.
@@ -45,4 +46,6 @@ public class Game implements Serializable{
     public void setMap(Map map) {
         this.map = map;
     }   
+
+     
 }
