@@ -9,6 +9,7 @@ import byui.cit260.conqueringConqueror.control.MovementControl;
 import byui.cit260.conqueringConqueror.model.Location;
 import conqueringconqueror.ConqueringConqueror;
 import static conqueringconqueror.ConqueringConqueror.getPlayer;
+import exception.MovementException;
 
 /**
  *
@@ -65,30 +66,70 @@ public abstract class TravelMenuView extends View{
 
     private void goNorth() {
         MovementControl mc = new MovementControl();
-        if(mc.moveNorth(ConqueringConqueror.getGame()) == false) {
+        try {
+            mc.moveNorth(ConqueringConqueror.getGame());
+            System.out.println("\nYou moved north.");
+        } catch (MovementException me) {
             System.out.println("\nYou cannot move north.");
+        } catch (Exception e) {
+        
+        } finally {
+            System.out.println("\nFinally executed.");
         }
+        
+        Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
+        System.out.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
 
     private void goSouth() {
         MovementControl mc = new MovementControl();
-        if(mc.moveSouth(ConqueringConqueror.getGame()) == false) {
+        try {
+            mc.moveSouth(ConqueringConqueror.getGame());
+            System.out.println("\nYou moved south.");
+        } catch (MovementException me) {
             System.out.println("\nYou cannot move south.");
+        } catch (Exception e) {
+        
+        } finally {
+            System.out.println("\nFinally executed.");
         }
+        
+        Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
+        System.out.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
 
     private void goWest() {
         MovementControl mc = new MovementControl();
-        if(mc.moveWest(ConqueringConqueror.getGame()) == false) {
+        try {
+            mc.moveWest(ConqueringConqueror.getGame());
+            System.out.println("\nYou moved west.");
+        } catch (MovementException me) {
             System.out.println("\nYou cannot move west.");
+        } catch (Exception e) {
+        
+        } finally {
+            System.out.println("\nFinally executed.");
         }
+        
+        Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
+        System.out.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
 
     private void goEast() {
         MovementControl mc = new MovementControl();
-        if(mc.moveEast(ConqueringConqueror.getGame()) == false) {
+        try {
+            mc.moveEast(ConqueringConqueror.getGame());
+            System.out.println("\nYou moved east.");
+        } catch (MovementException me) {
             System.out.println("\nYou cannot move east.");
+        } catch (Exception e) {
+        
+        } finally {
+            System.out.println("\nFinally executed.");
         }
+        
+        Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
+        System.out.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
 
     private void viewMap() {
