@@ -70,14 +70,14 @@ public abstract class GameMenuView extends View {
                 return true;
                 
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;
     }
 
     private void viewMap() {
-        System.out.println("\n" + ConqueringConqueror.getGame().getMap().getMapString());
+        this.console.println("\n" + ConqueringConqueror.getGame().getMap().getMapString());
     }
 
     private void inventory() {
@@ -91,13 +91,12 @@ public abstract class GameMenuView extends View {
     }
 
     private void explore() {
-        //System.out.println("CALLED EXPLORE - NOT IMPLEMENTED YET");  
         ExploreMenuView exploreMenu =  new ExploreMenuView() {};  
         exploreMenu.display();
     }
 
     private void loot() {
-        System.out.println("CALLED LOOT - NOT IMPLEMENTED YET");
+        this.console.println("CALLED LOOT - NOT IMPLEMENTED YET");
     }
 
     private void attack() {
@@ -106,11 +105,11 @@ public abstract class GameMenuView extends View {
     }
 
     private void eatDrink() {
-        System.out.println("\nCALLED EAT/DRINK - NOT IMPLEMENTED YET");
+        this.console.println("\nCALLED EAT/DRINK - NOT IMPLEMENTED YET");
     }
 
     private void weapons() {
-        System.out.println("\nCALLED WEAPONS - NOT IMPLEMENTED YET");
+        this.console.println("\nCALLED WEAPONS - NOT IMPLEMENTED YET");
     }
 
     private void team() {
@@ -119,7 +118,7 @@ public abstract class GameMenuView extends View {
     }
 
     private void saveCurrentGame() {
-        System.out.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");        
+        this.console.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");        
     }
 
     private void helpMenu() {

@@ -58,7 +58,7 @@ public abstract class TravelMenuView extends View{
                 return true;
                 
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;
@@ -68,77 +68,77 @@ public abstract class TravelMenuView extends View{
         MovementControl mc = new MovementControl();
         try {
             mc.moveNorth(ConqueringConqueror.getGame());
-            System.out.println("\nYou moved north.");
+            this.console.println("\nYou moved north.");
         } catch (MovementException me) {
-            System.out.println("\nYou cannot move north.");
+            this.console.println("\nYou cannot move north.");
         } catch (Exception e) {
         
         } finally {
-            System.out.println("\nFinally executed.");
+            this.console.println("\nFinally executed.");
         }
         
         Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
-        System.out.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
+        this.console.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
 
     private void goSouth() {
         MovementControl mc = new MovementControl();
         try {
             mc.moveSouth(ConqueringConqueror.getGame());
-            System.out.println("\nYou moved south.");
+            this.console.println("\nYou moved south.");
         } catch (MovementException me) {
-            System.out.println("\nYou cannot move south.");
+            this.console.println("\nYou cannot move south.");
         } catch (Exception e) {
         
         } finally {
-            System.out.println("\nFinally executed.");
+            this.console.println("\nFinally executed.");
         }
         
         Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
-        System.out.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
+        this.console.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
 
     private void goWest() {
         MovementControl mc = new MovementControl();
         try {
             mc.moveWest(ConqueringConqueror.getGame());
-            System.out.println("\nYou moved west.");
+            this.console.println("\nYou moved west.");
         } catch (MovementException me) {
-            System.out.println("\nYou cannot move west.");
+            this.console.println("\nYou cannot move west.");
         } catch (Exception e) {
         
         } finally {
-            System.out.println("\nFinally executed.");
+            this.console.println("\nFinally executed.");
         }
         
         Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
-        System.out.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
+        this.console.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
 
     private void goEast() {
         MovementControl mc = new MovementControl();
         try {
             mc.moveEast(ConqueringConqueror.getGame());
-            System.out.println("\nYou moved east.");
+            this.console.println("\nYou moved east.");
         } catch (MovementException me) {
-            System.out.println("\nYou cannot move east.");
+            this.console.println("\nYou cannot move east.");
         } catch (Exception e) {
         
         } finally {
-            System.out.println("\nFinally executed.");
+            this.console.println("\nFinally executed.");
         }
         
         Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
-        System.out.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
+        this.console.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
 
     private void viewMap() {
-        System.out.println("\n" + ConqueringConqueror.getGame().getMap().getMapString());
+        this.console.println("\n" + ConqueringConqueror.getGame().getMap().getMapString());
     }
 
     private void viewLocation() {
         Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
-        System.out.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
+        this.console.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
     
 }

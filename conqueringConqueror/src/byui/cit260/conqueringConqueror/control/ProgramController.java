@@ -146,6 +146,12 @@ public class ProgramController {
         zababa.setHealth(30);
         villainList.add(zababa);
         
+        Villain sargon = new Villain();
+        sargon.setName("Sargon");
+        sargon.setAttackPoints(20);
+        sargon.setHealth(150);
+        villainList.add(sargon);
+        
         return villainList;
     }
     

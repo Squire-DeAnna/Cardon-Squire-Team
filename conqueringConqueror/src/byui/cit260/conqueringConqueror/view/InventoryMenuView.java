@@ -26,22 +26,6 @@ public abstract class InventoryMenuView extends View {
         
     }
     
-    /*public void displayMenu(){
-        
-        char selection = ' ';
-        
-        do {
-            System.out.println(menu);
-            
-            String input = getInput();
-            selection = input.charAt(0);
-            
-            doAction(selection);
-            
-        } while(selection != 'Q');
-        
-    }*/
-    
     public boolean doAction(String selection) {
         
         char charSel = selection.toUpperCase().charAt(0);
@@ -63,34 +47,14 @@ public abstract class InventoryMenuView extends View {
                 return true;
                 
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;
     }
-    
-    /*public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-        
-        while(!isValid){
-            System.out.println("Please select an option:");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input == null || input.length() == 0){
-                System.out.println("Invalid input - please enter a valid character.");
-            } else {
-                isValid = true;
-            }
-        }
-        
-        return input.toUpperCase();
-    }*/
 
     private void weapons() {
-        System.out.println("\nCALLED WEAPONS - NOT IMPLEMENTED YET");
+        this.console.println("\nCALLED WEAPONS - NOT IMPLEMENTED YET");
     }
 
     private void foodMenu() {
@@ -99,7 +63,7 @@ public abstract class InventoryMenuView extends View {
     }
 
     private void saveCurrentGame() {
-        System.out.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
+        this.console.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
     }
 
     private void helpMenu() {

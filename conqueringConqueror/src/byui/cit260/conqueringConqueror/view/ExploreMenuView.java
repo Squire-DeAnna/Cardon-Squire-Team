@@ -30,25 +30,6 @@ public abstract class ExploreMenuView extends View {
             + "\nQ - Quit to main menu");
     }
     
-      
-    
-    
-    /*public void displayMenu(){
-        
-        char selection = ' ';
-        
-        do {
-            System.out.println(menu);
-            
-            String input = getInput();
-            selection = input.charAt(0);
-            
-            doAction(selection);
-            
-        } while(selection != 'Q');
-        
-    }*/
-    
    
     public boolean doAction(String selection) {
         
@@ -83,31 +64,11 @@ public abstract class ExploreMenuView extends View {
                 return true;
             
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;
     }
-    
-    /*public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-        
-        while(!isValid){
-            System.out.println("Please select an option:");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input == null || input.length() == 0){
-                System.out.println("Invalid input - please enter a valid character.");
-            } else {
-                isValid = true;
-            }
-        }
-        
-        return input.toUpperCase();
-    }*/
 
         private void attack() {
         AttackMenuView attackMenu = new AttackMenuView() {};
@@ -115,11 +76,11 @@ public abstract class ExploreMenuView extends View {
         }
 
         private void flee() {
-            System.out.println("You have chossen to flee from the enemy " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+            this.console.println("You have chossen to flee from the enemy " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
         }
 
         private void pickUpLoot() {
-            System.out.println("You have chossen to pick up found treasures " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+            this.console.println("You have chossen to pick up found treasures " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
         }
 
         private void eatFood() {
@@ -133,7 +94,6 @@ public abstract class ExploreMenuView extends View {
         }
 
         private void searchLocation() {
-            //System.out.println("You have chossen to search your present location " + " NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
             if(ConqueringConqueror.getPlayer().getLocation().getHero() != null){
                 RecruitHeroView rhv = new RecruitHeroView();
                 rhv.display();

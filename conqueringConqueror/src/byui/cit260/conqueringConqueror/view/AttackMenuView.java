@@ -22,26 +22,6 @@ public abstract class AttackMenuView extends View{
             + "\nA - Attack Enemy"
             + "\nF - Flee From Enemy" );
     }
-    
-      
-    
-    
-    /*public void displayMenu(){
-        
-        char selection = ' ';
-        
-        do {
-            System.out.println(menu);
-            
-            String input = getInput();
-            selection = input.charAt(0);
-            
-            doAction(selection);
-            
-        } while(selection != 'Q');
-        
-    }*/
-    
    
     public boolean doAction(String selection) {
         
@@ -57,19 +37,19 @@ public abstract class AttackMenuView extends View{
             
             
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;
     }
 
     private void attack() {
-        System.out.println(getPlayer().getName() + " has chossen to attack the enemy" + getPlayer());
+        this.console.println(getPlayer().getName() + " has chossen to attack the enemy" + getPlayer());
         
     }
 
     private void flee() {
-        System.out.println(getPlayer().getName() + " has chossen to flee from the enemy");
+        this.console.println(getPlayer().getName() + " has chossen to flee from the enemy");
         GameMenuView gameMenu = new GameMenuView(){};
         gameMenu.display();
     }

@@ -58,7 +58,7 @@ public abstract class EatMenuView extends View {
                 return true;
              
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;

@@ -25,22 +25,6 @@ public abstract class HelpMenuView extends View {
     
     }
     
-    /*public void displayMenu(){
-        
-        char selection = ' ';
-        
-        do {
-            System.out.println(menu);
-            
-            String input = getInput();
-            selection = input.charAt(0);
-            
-            doAction(selection);
-            
-        } while(selection != 'Q');
-        
-    }*/
-    
     public boolean doAction(String selection) {
         
         char charSel = selection.toUpperCase().charAt(0);
@@ -59,83 +43,62 @@ public abstract class HelpMenuView extends View {
                 return true;
                 
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;
     }
-    
-    /*public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-        
-        while(!isValid){
-            System.out.println("Please select an option:");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input == null || input.length() == 0){
-                System.out.println("Invalid input - please enter a valid character.");
-            } else {
-                isValid = true;
-            }
-        }
-        
-        return input.toUpperCase();
-    }*/
-
 
     private void aboutGame() {
-        System.out.println("===========================================");
-        System.out.println("|                About Game               |");
-        System.out.println("===========================================");
-        System.out.println("It’s 2340 BC and Sargon the Great");
-        System.out.println("is feverously creating the Akkadian");
-        System.out.println("Empire in Mesopotamia. He is ruthlessly");
-        System.out.println("invading neighboring city states and");
-        System.out.println("demanding they show allegiance to him.");
-        System.out.println("You have no desire to be ruled by this");
-        System.out.println("tyrannous dictator and decide to set");
-        System.out.println("off on a quest to assassinate him.");
-        System.out.println("");
-        System.out.println("Your journey will start in the city of");
-        System.out.println("Ur, and you will need to travel through");
-        System.out.println("Lagash and Adab on your way to the");
-        System.out.println("capital city, Akkad. Along your way you");
-        System.out.println("will need to gather new weapons, make");
-        System.out.println("friends who share your passion for freedom,");
-        System.out.println("and stay alive. You will need to find");
-        System.out.println("food and water, as well as protect");
-        System.out.println("yourself from those who would wish to");
-        System.out.println("stop you. In each new city the dangers");
-        System.out.println("around you will become more unyielding,");
-        System.out.println("so make sure you don’t head there before ");
-        System.out.println("you feel prepared.");
-        System.out.println("===========================================");
+        this.console.println("===========================================");
+        this.console.println("|                About Game               |");
+        this.console.println("===========================================");
+        this.console.println("It’s 2340 BC and Sargon the Great");
+        this.console.println("is feverously creating the Akkadian");
+        this.console.println("Empire in Mesopotamia. He is ruthlessly");
+        this.console.println("invading neighboring city states and");
+        this.console.println("demanding they show allegiance to him.");
+        this.console.println("You have no desire to be ruled by this");
+        this.console.println("tyrannous dictator and decide to set");
+        this.console.println("off on a quest to assassinate him.");
+        this.console.println("");
+        this.console.println("Your journey will start in the city of");
+        this.console.println("Ur, and you will need to travel through");
+        this.console.println("Lagash and Adab on your way to the");
+        this.console.println("capital city, Akkad. Along your way you");
+        this.console.println("will need to gather new weapons, make");
+        this.console.println("friends who share your passion for freedom,");
+        this.console.println("and stay alive. You will need to find");
+        this.console.println("food and water, as well as protect");
+        this.console.println("yourself from those who would wish to");
+        this.console.println("stop you. In each new city the dangers");
+        this.console.println("around you will become more unyielding,");
+        this.console.println("so make sure you don’t head there before ");
+        this.console.println("you feel prepared.");
+        this.console.println("===========================================");
     }
 
     private void howToMove() {
-        System.out.println("===========================================");
-        System.out.println("|               How To Move               |");
-        System.out.println("===========================================");
-        System.out.println("The city will consist of a 5x5");
-        System.out.println("map that you can move North, East");
-        System.out.println("South, and West on.");
-        System.out.println("===========================================");
+        this.console.println("===========================================");
+        this.console.println("|               How To Move               |");
+        this.console.println("===========================================");
+        this.console.println("The city will consist of a 5x5");
+        this.console.println("map that you can move North, East");
+        this.console.println("South, and West on.");
+        this.console.println("===========================================");
         
     }
 
     private void howStrengthIsDetermined() {
-        System.out.println("===========================================");
-        System.out.println("|      How Is Strength Determined         |");
-        System.out.println("===========================================");
-        System.out.println("Strength is determinded by how full/");
-        System.out.println("hungry/thirsty the user is, strength");
-        System.out.println("that is earned from experience in");
-        System.out.println("battle, and strength points that come");
-        System.out.println("from weapons.");
-        System.out.println("===========================================");
+        this.console.println("===========================================");
+        this.console.println("|      How Is Strength Determined         |");
+        this.console.println("===========================================");
+        this.console.println("Strength is determinded by how full/");
+        this.console.println("hungry/thirsty the user is, strength");
+        this.console.println("that is earned from experience in");
+        this.console.println("battle, and strength points that come");
+        this.console.println("from weapons.");
+        this.console.println("===========================================");
     }
     
 }

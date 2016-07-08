@@ -8,6 +8,8 @@ package byui.cit260.conqueringConqueror.view;
 import byui.cit260.conqueringConqueror.control.QuestionControl;
 import byui.cit260.conqueringConqueror.model.Location;
 import conqueringconqueror.ConqueringConqueror;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,6 +20,8 @@ import java.util.Scanner;
 public class RecruitHeroView extends View {
 
     private int area;
+    protected final BufferedReader keyboard = ConqueringConqueror.getInFile();
+    protected final PrintWriter console = ConqueringConqueror.getOutFile();
 
     public RecruitHeroView() {
         Random r = new Random();
@@ -26,7 +30,7 @@ public class RecruitHeroView extends View {
 
     public void display() {
         String heroName = ConqueringConqueror.getPlayer().getLocation().getHero().getName();
-        System.out.println("\n************************************"
+        this.console.println("\n************************************"
                 + "\n|          Save the Hero           |"
                 + "\n************************************"
                 + "\nYou have found " + heroName + " in need of help!"
@@ -38,36 +42,36 @@ public class RecruitHeroView extends View {
     }
 
     public void getNumbers() {
-        Scanner in = new Scanner(System.in);
+        //Scanner in = new Scanner(System.in);
         int base1 = 0;
         int base2 = 0;
         int height = 0;
         boolean keepTrying = false;
         do {
             try {
-                System.out.println("Enter the First Base");
-                base1 = Integer.parseInt(in.nextLine());
-                System.out.println("Enter the Second Base");
-                base2 = Integer.parseInt(in.nextLine());
-                System.out.println("Enter the Height");
-                height = Integer.parseInt(in.nextLine());
+                this.console.println("Enter the First Base");
+                base1 = Integer.parseInt(this. keyboard.readLine());
+                this.console.println("Enter the Second Base");
+                base2 = Integer.parseInt(this.keyboard.readLine());
+                this.console.println("Enter the Height");
+                height = Integer.parseInt(this.keyboard.readLine());
             } catch (NumberFormatException nfe) {
-                System.out.println("Please enter numbers only");
+                this.console.println("Please enter numbers only");
             }
             QuestionControl qc = new QuestionControl();
             double playerAnswer = qc.calcAreaTrapezoid(base1, base2, height);
             if ((int) playerAnswer == area) {
                 //success
-                System.out.println("You have answered successfully!");
+                this.console.println("You have answered successfully!");
                 keepTrying = false;
                 Location currentLocation = ConqueringConqueror.getPlayer().getLocation();
                 ConqueringConqueror.getPlayer().addHero(currentLocation.getHero());
                 currentLocation.setHero(null);
             } else {
-                System.out.println("Do you want to try again?"
+                this.console.println("Do you want to try again?"
                 +"\nY - Yes"
                 +"\nN - No");
-                if (in.nextLine().toUpperCase().charAt(0) == 'Y'){
+                if (this.keyboard.readLine().toUpperCase().charAt(0) == 'Y'){
                     keepTrying = true;
                 } else {
                     keepTrying = false;

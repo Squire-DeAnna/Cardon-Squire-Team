@@ -40,7 +40,7 @@ public abstract class FoodDrinkMenuView extends View {
                 return true;
              
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;
@@ -55,7 +55,7 @@ public abstract class FoodDrinkMenuView extends View {
     }
          
          private void saveCurrentGame() {
-        System.out.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
+        this.console.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
     }
 
 }

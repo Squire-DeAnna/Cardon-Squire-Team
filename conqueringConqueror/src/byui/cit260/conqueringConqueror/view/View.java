@@ -5,6 +5,9 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import conqueringconqueror.ConqueringConqueror;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = ConqueringConqueror.getInFile();
+    protected final PrintWriter console = ConqueringConqueror.getOutFile();
     
     public View(){
     }
@@ -42,21 +48,28 @@ public abstract class View implements ViewInterface {
     
     @Override
      public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
+        String input = " ";
         boolean isValid = false;
-        
-        while(!isValid){
-            System.out.println("\n" + this.displayMessage);
-            input = keyboard.nextLine();
+        try {
+            //while a valid name has not been retrieved
+            while(!isValid){
+            
+            // get the value entered from the keyboard    
+            //System.out.println("\n" + this.displayMessage);
+            input = this.keyboard.readLine();
             input = input.trim();
+            input = input.toUpperCase();
             
             if(input == null || input.length() == 0){
-                System.out.println("Invalid input - please enter a valid character.");
+                this.console.println("Invalid input - please enter a valid character.");
             } else {
                 isValid = true;
             }
+            break;
         }
+    } catch (Exception e) {
+        ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
+    }
         
         return input;
     }

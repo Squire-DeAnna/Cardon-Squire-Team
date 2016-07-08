@@ -8,6 +8,8 @@ package byui.cit260.conqueringConqueror.view;
 import byui.cit260.conqueringConqueror.control.ProgramController;
 import byui.cit260.conqueringConqueror.model.Player;
 import conqueringconqueror.ConqueringConqueror;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -15,6 +17,9 @@ import java.util.Scanner;
  * @author Erika
  */
 public class StartProgramView {
+    
+    protected final BufferedReader keyboard = ConqueringConqueror.getInFile();
+    protected final PrintWriter console = ConqueringConqueror.getOutFile();
     
     public StartProgramView(){
         
@@ -36,24 +41,31 @@ public class StartProgramView {
         mainMenu.display();
         
     }
-    
+   
     public String getPlayerName(){
         
         boolean validName = false;
+        // added String input as a variable
+        String input = null;
         String name = "";
-        Scanner keyboard = new Scanner(System.in);
+        //Scanner keyboard = new Scanner(System.in);
         
-        System.out.println("Please enter your name: ");
-        
+        this.console.println("Please enter your name: ");
+        try {
+           
         while(!validName) {
-            String input = keyboard.nextLine();
+            input = keyboard.readLine();
             
             if(input == null || input.length() >= 2) {
                 validName = true;
                 name = input;
             } else {
-                System.out.println("Input is invalide - name must be at least 2 characters.");
+                ErrorView.display(this.getClass().getName(), "Input is invalide - name must be at least 2 characters.");
             }
+            break;
+        }
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
         
         return name;
@@ -67,7 +79,7 @@ public class StartProgramView {
                 "\nGet ready for some fun!" +
                 "\n===================================";
         
-        System.out.println(welcome);
+        this.console.println(welcome);
     }
     
     public void displayWelcomeMessage(String playerName){

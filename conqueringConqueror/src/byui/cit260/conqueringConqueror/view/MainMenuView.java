@@ -5,6 +5,7 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import byui.cit260.conqueringConqueror.control.GameControl;
 import byui.cit260.conqueringConqueror.control.ProgramController;
 import conqueringconqueror.ConqueringConqueror;
 import static conqueringconqueror.ConqueringConqueror.getPlayer;
@@ -34,13 +35,13 @@ public abstract class MainMenuView extends View {
         
         switch(charSel){
             case 'N':
-                startNewGame();
+                this.startNewGame();
                 break;
             case 'L':
-                loadSavedGame();
+                this.loadSavedGame();
                 break;
             case 'S':
-                saveCurrentGame();
+                this.saveCurrentGame();
                 break;
             case 'H':
                 helpMenu();
@@ -49,7 +50,7 @@ public abstract class MainMenuView extends View {
                 return true;
                 
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;
@@ -58,7 +59,7 @@ public abstract class MainMenuView extends View {
     private void startNewGame() {
         ProgramController.createNewGame(ConqueringConqueror.getPlayer());
         
-        System.out.println("\nWelcome, " + getPlayer().getName() + "!"
+        this.console.println("\nWelcome, " + getPlayer().getName() + "!"
             +"\nAre you ready to conquer the conqueror?!");
         
         GameMenuView gameMenu = new GameMenuView() {};
@@ -66,11 +67,36 @@ public abstract class MainMenuView extends View {
     }
 
     private void loadSavedGame() {
-        System.out.println("\nCALLED LOAD NEW GAME - NOT IMPLEMENTED YET");
+        // prompt for and get the name of the file that the game is saved in
+        this.console.println("\nEnter the file path for file where the game "
+                                + "has been saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            // start a saved game
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        // display the game menu
+        MainMenuView mainMenu = new MainMenuView() {};
+        mainMenu.display();
     }
 
     private void saveCurrentGame() {
-        System.out.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\nEnter the file path for file where the game "
+                                + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            // save the game to the specified file
+            GameControl.saveCurrentGame(ConqueringConqueror.getGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void helpMenu() {
