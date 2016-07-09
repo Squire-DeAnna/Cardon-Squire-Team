@@ -5,11 +5,15 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import byui.cit260.conqueringConqueror.control.GameControl;
 import byui.cit260.conqueringConqueror.control.MovementControl;
+import byui.cit260.conqueringConqueror.model.Food;
+import byui.cit260.conqueringConqueror.model.FoodType;
 import byui.cit260.conqueringConqueror.model.Location;
 import conqueringconqueror.ConqueringConqueror;
 import static conqueringconqueror.ConqueringConqueror.getPlayer;
 import exception.MovementException;
+import java.util.ArrayList;
 
 /**
  *
@@ -27,7 +31,7 @@ public abstract class TravelMenuView extends View{
             + "\nE - Go East"
             + "\nW - Go West"
             + "\nM - View Map"
-            + "\nL - View Location"
+            + "\nL - View Location"        
             + "\nQ - Quit");
     }
     
@@ -54,6 +58,7 @@ public abstract class TravelMenuView extends View{
             case 'L':
                 viewLocation();
                 break;
+            
             case 'Q':
                 return true;
                 
@@ -140,5 +145,7 @@ public abstract class TravelMenuView extends View{
         Location l = ConqueringConqueror.getGame().getPlayer().getLocation();
         this.console.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
+
     
-}
+ }
+    

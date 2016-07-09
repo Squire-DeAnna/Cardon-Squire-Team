@@ -5,6 +5,10 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import byui.cit260.conqueringConqueror.control.GameControl;
+import byui.cit260.conqueringConqueror.model.Food;
+import java.util.ArrayList;
+
 /**
  *
  * @author deannasquire
@@ -24,6 +28,7 @@ public abstract class EatMenuView extends View {
             + "\nL - Locusts"
             + "\nM - Lamb"
             + "\nB - Berries"
+            + "\nR - Print Food Report"
             + "\nQ - Quit"
      );
     }
@@ -54,6 +59,9 @@ public abstract class EatMenuView extends View {
             case 'B':
                 foodIntake();
                 break;*/
+            case 'R':
+                printFoodReport();
+                break;
             case 'Q':
                 return true;
              
@@ -69,7 +77,23 @@ public abstract class EatMenuView extends View {
         
     }*/
     }
-}
+
+    private void printFoodReport() {
+        
+         this.console.println("\nEnter the file path for file where the report "
+                                + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+             ArrayList<Food> Foodlist = null;
+            // save the game to the specified file
+            GameControl.printFoodReport(Foodlist, filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+    }
+    }
+
 
 
 

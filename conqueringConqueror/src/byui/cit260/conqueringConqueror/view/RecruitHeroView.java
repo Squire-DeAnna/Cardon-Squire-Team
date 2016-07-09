@@ -9,9 +9,12 @@ import byui.cit260.conqueringConqueror.control.QuestionControl;
 import byui.cit260.conqueringConqueror.model.Location;
 import conqueringconqueror.ConqueringConqueror;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -38,10 +41,14 @@ public class RecruitHeroView extends View {
                 + "\ntrapezoid in order to calculate it's area. It's area is " + area
                 + "\nPlease enter the numbers below."
         );
-        getNumbers();
+        try {//Jason added try catch 7/9/2016
+            getNumbers();
+        } catch (IOException ex) {
+            Logger.getLogger(RecruitHeroView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    public void getNumbers() {
+    public void getNumbers() throws IOException {// jason added ioexception 7/9/2016
         //Scanner in = new Scanner(System.in);
         int base1 = 0;
         int base2 = 0;
