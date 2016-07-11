@@ -33,6 +33,10 @@ public abstract class GameMenuView extends View {
     
     public boolean doAction(String selection) {
         
+        if(selection == null || selection.length() == 0) {
+            return false;
+        }
+        
         char charSel = selection.toUpperCase().charAt(0);
         
         switch(charSel){

@@ -31,7 +31,6 @@ public abstract class View implements ViewInterface {
     
     @Override
     public void display() {
-
         boolean done = false;
         do {
             //prompt for and get players name
@@ -48,6 +47,7 @@ public abstract class View implements ViewInterface {
     
     @Override
      public String getInput() {
+        console.println(displayMessage);
         String input = " ";
         boolean isValid = false;
         try {
