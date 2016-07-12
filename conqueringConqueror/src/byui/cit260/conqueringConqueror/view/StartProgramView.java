@@ -60,7 +60,7 @@ public class StartProgramView {
                 validName = true;
                 name = input;
             } else {
-                ErrorView.display(this.getClass().getName(), "Input is invalide - name must be at least 2 characters.");
+                ErrorView.display(this.getClass().getName(), "Input is invalid - name must be at least 2 characters.");
             }
             break;
         }

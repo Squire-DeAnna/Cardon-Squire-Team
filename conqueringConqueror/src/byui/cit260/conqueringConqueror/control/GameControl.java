@@ -8,6 +8,7 @@ package byui.cit260.conqueringConqueror.control;
 import byui.cit260.conqueringConqueror.model.Food;
 import byui.cit260.conqueringConqueror.model.Game;
 import byui.cit260.conqueringConqueror.model.Item;
+import byui.cit260.conqueringConqueror.view.ErrorView;
 import conqueringconqueror.ConqueringConqueror;
 import exception.GameControlException;
 import java.io.FileInputStream;
@@ -78,5 +79,30 @@ public class GameControl {
              }
 
         
-    }       
+    } 
+    
+    public static void printInventoryReport(ArrayList<Item> inventoryItems, String outputLocation)
+            throws FileNotFoundException{
+         
+        try(PrintWriter out = new PrintWriter(outputLocation)){
+         
+        //Print title and column headings
+         out.println("\n\n               Inventory Report                ");
+         out.printf("%n%-20s%10s%10s%10s", "   Name    ", "Quantity", "Weight", "Strength");
+         out.printf("%n%-20s%10s%10s%10s", "-----------", "--------", "-------", "-------");
+         
+         //print the name, quantity, weight, and strength of each inventory item
+         for (Item item : inventoryItems){
+             out.printf("%n%-20s%7d%7d%7d", item.getName()
+                                          , item.getQuantity()
+                                          , item.getWeight()
+                                          , item.getStrengthIncrease());
+         }
+        
+             }catch (Exception e){
+                 ErrorView.display("InventoryReport", e.getMessage());
+             }
+
+        
+    }
 }

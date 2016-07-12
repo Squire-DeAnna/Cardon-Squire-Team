@@ -5,6 +5,10 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import byui.cit260.conqueringConqueror.control.GameControl;
+import byui.cit260.conqueringConqueror.model.Food;
+import byui.cit260.conqueringConqueror.model.Item;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -22,6 +26,7 @@ public abstract class InventoryMenuView extends View {
             + "\nF - Food/Drink"
             + "\nS - Save"
             + "\nH - Help"
+            + "\nR - Print Inventory Report"
             + "\nQ - Quit");
         
     }
@@ -42,6 +47,9 @@ public abstract class InventoryMenuView extends View {
                 break;
             case 'H':
                 helpMenu();
+                break;
+            case 'R':
+                printInventoryReport();
                 break;
             case 'Q':
                 return true;
@@ -69,6 +77,21 @@ public abstract class InventoryMenuView extends View {
     private void helpMenu() {
         HelpMenuView helpMenu = new HelpMenuView() {};
         helpMenu.display();
+    }
+
+    private void printInventoryReport() {
+        this.console.println("\nEnter the file path for file where the report "
+                                + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+             ArrayList<Item> InventoryItems = null;
+            
+            // save the game to the specified file
+            GameControl.printInventoryReport(InventoryItems, filePath);
+        } catch (Exception ex) {
+            ErrorView.display("InventoryMenuView", ex.getMessage());
+        }
     }
 
 }

@@ -5,6 +5,7 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import byui.cit260.conqueringConqueror.control.GameControl;
 import conqueringconqueror.ConqueringConqueror;
 
 /**
@@ -122,7 +123,17 @@ public abstract class GameMenuView extends View {
     }
 
     private void saveCurrentGame() {
-        this.console.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");        
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\nEnter the file path for file where the game "
+                                + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            // save the game to the specified file
+            GameControl.saveCurrentGame(ConqueringConqueror.getGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("GameMenuView", ex.getMessage());
+        }      
     }
 
     private void helpMenu() {

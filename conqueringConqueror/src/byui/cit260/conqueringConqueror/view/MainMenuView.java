@@ -81,8 +81,8 @@ public abstract class MainMenuView extends View {
         }
         
         // display the game menu
-        MainMenuView mainMenu = new MainMenuView() {};
-        mainMenu.display();
+        GameMenuView gameMenu = new GameMenuView() {};
+        gameMenu.display();
     }
 
     private void saveCurrentGame() {
