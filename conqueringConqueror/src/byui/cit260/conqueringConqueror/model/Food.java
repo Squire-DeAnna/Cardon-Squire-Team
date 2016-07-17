@@ -16,6 +16,7 @@ public class Food {
     private String name;
     private String description;
     private double healthIncrease;
+    private FoodType foodType;
     
     public Food(){
         
@@ -45,12 +46,21 @@ public class Food {
         this.healthIncrease = healthIncrease;
     }
 
+    public FoodType getFoodType() {
+        return foodType;
+    }
+
+    public void setFoodType(FoodType foodType) {
+        this.foodType = foodType;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + Objects.hashCode(this.description);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.healthIncrease) ^ (Double.doubleToLongBits(this.healthIncrease) >>> 32));
+        int hash = 3;
+        hash = 71 * hash + Objects.hashCode(this.name);
+        hash = 71 * hash + Objects.hashCode(this.description);
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.healthIncrease) ^ (Double.doubleToLongBits(this.healthIncrease) >>> 32));
+        hash = 71 * hash + Objects.hashCode(this.foodType);
         return hash;
     }
 
@@ -75,13 +85,17 @@ public class Food {
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
+        if (this.foodType != other.foodType) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Food{" + "name=" + name + ", description=" + description + ", healthIncrease=" + healthIncrease + '}';
+        return "Food{" + "name=" + name + ", description=" + description + ", healthIncrease=" + healthIncrease + ", foodType=" + foodType + '}';
     }
+
     
     
 }

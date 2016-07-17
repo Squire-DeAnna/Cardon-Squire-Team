@@ -22,6 +22,8 @@ public class Player implements Serializable {
     private double maxStrength;
     private double currentCarry;
     private double maxCarry;
+    private double attackPoints;
+    private double health;
     List<Item> inventory;
     List<Hero> team;
     Location location;
@@ -103,6 +105,30 @@ public class Player implements Serializable {
 
     public void setDrink(Drink drink) {
         this.drink = drink;
+    }
+
+    public double getAttackPoints() {
+        return attackPoints;
+    }
+
+    public void setAttackPoints(double attackPoints) {
+        this.attackPoints = attackPoints;
+    }
+
+    public double getHealth() {
+        return health;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
+    }
+
+    public List<Item> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(List<Item> inventory) {
+        this.inventory = inventory;
     }
     
     

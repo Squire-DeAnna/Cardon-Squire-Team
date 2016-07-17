@@ -7,6 +7,8 @@ package byui.cit260.conqueringConqueror.view;
 
 import byui.cit260.conqueringConqueror.control.GameControl;
 import byui.cit260.conqueringConqueror.model.Food;
+import byui.cit260.conqueringConqueror.model.FoodType;
+import byui.cit260.conqueringConqueror.model.Player;
 import java.util.ArrayList;
 
 /**
@@ -36,29 +38,36 @@ public abstract class EatMenuView extends View {
     public boolean doAction(String selection) {
         
         char charSel = selection.toUpperCase().charAt(0);
+        /* Venison,
+    Goat,
+    Dates,
+    Grapes,
+    Locusts,
+    Lamb,
+    Berries */
         
         switch(charSel){
-            /*case 'V':
-                foodIntake();
-                break;
             case 'G':
-                foodIntake();
+                eatGoat();
+                break;
+            case 'V':
+                eatVenison();
                 break;
             case 'D':
-                foodIntake();
+                eatDates();
                 break;
-            case 'F':
-                foodIntake();
+            case 'P':
+                eatGrapes();
                 break;
             case 'L':
-                foodIntake();
+                eatLocusts();
                 break;
             case 'M':
-                foodIntake();
+                eatLamb();
                 break;    
             case 'B':
-                foodIntake();
-                break;*/
+                eatBerries();
+                break;
             case 'R':
                 printFoodReport();
                 break;
@@ -71,11 +80,7 @@ public abstract class EatMenuView extends View {
         }
         return false;
         
-        /*private void foodIntake(){
-            
-            
-        
-    }*/
+       
     }
 
     private void printFoodReport() {
@@ -91,6 +96,70 @@ public abstract class EatMenuView extends View {
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
+    }
+
+    private void eatGoat() {
+        Player player = new Player();
+        player.getHealth();
+        Food food = new Food();
+        food.setFoodType(FoodType.Goat);
+        food.setHealthIncrease(10);
+        double playerHealth = player.getHealth() + food.getHealthIncrease();
+       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+    }
+
+    private void eatVenison() {
+        Player player = new Player();
+        Food food = new Food();
+        food.setFoodType(FoodType.Venison);
+        food.setHealthIncrease(8);
+        double playerHealth = player.getHealth() + food.getHealthIncrease();
+       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+    }
+
+    private void eatDates() {
+        Player player = new Player();
+        Food food = new Food();
+        food.setFoodType(FoodType.Dates);
+        food.setHealthIncrease(6);
+        double playerHealth = player.getHealth() + food.getHealthIncrease();
+       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+    }
+
+    private void eatGrapes() {
+        Player player = new Player();
+        Food food = new Food();
+        food.setFoodType(FoodType.Grapes);
+        food.setHealthIncrease(6);
+        double playerHealth = player.getHealth() + food.getHealthIncrease();
+       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+    }
+
+    private void eatLocusts() {
+        Player player = new Player();
+        Food food = new Food();
+        food.setFoodType(FoodType.Locusts);
+        food.setHealthIncrease(12);
+        double playerHealth = player.getHealth() + food.getHealthIncrease();
+       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+    }
+
+    private void eatLamb() {
+        Player player = new Player();
+        Food food = new Food();
+        food.setFoodType(FoodType.Lamb);
+        food.setHealthIncrease(4);
+        double playerHealth = player.getHealth() + food.getHealthIncrease();
+       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+    }
+
+    private void eatBerries() {
+        Player player = new Player();
+        Food food = new Food();
+        food.setFoodType(FoodType.Berries);
+        food.setHealthIncrease(2);
+        double playerHealth = player.getHealth() + food.getHealthIncrease();
+       this.console.println(player.getName() + "\n Has chossen to eat" + food.getFoodType() +  "and health has increased to " + playerHealth);
     }
     }
 

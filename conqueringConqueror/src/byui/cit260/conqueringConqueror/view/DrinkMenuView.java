@@ -5,6 +5,10 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import byui.cit260.conqueringConqueror.model.Drink;
+import byui.cit260.conqueringConqueror.model.DrinkType;
+import byui.cit260.conqueringConqueror.model.Player;
+
 /**
  *
  * @author deannasquire
@@ -29,21 +33,25 @@ public abstract class DrinkMenuView extends View {
     public boolean doAction(String selection) {
         
         char charSel = selection.toUpperCase().charAt(0);
+        /* Water,
+    Juice,
+    Milk,
+    NectarOfTheGods */
         
         switch(charSel){
-            /*case 'W':
-                drinkIntake();
+            case 'W':
+                drinkWater();
                 break;
             case 'J':
-                drinkIntake();
+                drinkJuice();
                 break;
             case 'M':
-                drinkIntake();
+                drinkMilk();
                 break;
             case 'N':
-                drinkIntake();
+                drinkNectarOfGods();
                 break;
-            */
+            
             case 'Q':
                 return true;
              
@@ -53,11 +61,47 @@ public abstract class DrinkMenuView extends View {
         }
         return false;
         
-        /*private void drinkIntake(){
-            
-            
         
-    }*/
+    }
+
+    private void drinkWater() {
+        Player player = new Player();
+        player.getHealth();
+        Drink drink = new Drink();
+        drink.setDrinkType(DrinkType.Water);
+        drink.setHealthIncrease(1);
+        double playerHealth = player.getHealth() + drink.getHealthIncrease();
+        this.console.println(player.getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
+    }
+
+    private void drinkJuice() {
+        Player player = new Player();
+        player.getHealth();
+        Drink drink = new Drink();
+        drink.setDrinkType(DrinkType.Juice);
+        drink.setHealthIncrease(4);
+        double playerHealth = player.getHealth() + drink.getHealthIncrease();
+        this.console.println(player.getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
+    }
+
+    private void drinkMilk() {
+        Player player = new Player();
+        player.getHealth();
+        Drink drink = new Drink();
+        drink.setDrinkType(DrinkType.Milk);
+        drink.setHealthIncrease(8);
+        double playerHealth = player.getHealth() + drink.getHealthIncrease();
+        this.console.println(player.getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
+    }
+
+    private void drinkNectarOfGods() {
+        Player player = new Player();
+        player.getHealth();
+        Drink drink = new Drink();
+        drink.setDrinkType(DrinkType.NectarOfTheGods);
+        drink.setHealthIncrease(15);
+        double playerHealth = player.getHealth() + drink.getHealthIncrease();
+        this.console.println(player.getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
     }
 }
     

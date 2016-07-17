@@ -5,6 +5,8 @@
  */
 package byui.cit260.conqueringConqueror.model;
 
+import java.util.Objects;
+
 /**
  *
  * @author Jason
@@ -14,6 +16,7 @@ public class Drink {
     private String name;
     private String description;
     private double healthIncrease;
+    private DrinkType drinkType;
     
     public Drink(){
         
@@ -41,6 +44,56 @@ public class Drink {
 
     public void setHealthIncrease(double healthIncrease) {
         this.healthIncrease = healthIncrease;
+    }
+
+    public DrinkType getDrinkType() {
+        return drinkType;
+    }
+
+    public void setDrinkType(DrinkType drinkType) {
+        this.drinkType = drinkType;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.name);
+        hash = 53 * hash + Objects.hashCode(this.description);
+        hash = 53 * hash + (int) (Double.doubleToLongBits(this.healthIncrease) ^ (Double.doubleToLongBits(this.healthIncrease) >>> 32));
+        hash = 53 * hash + Objects.hashCode(this.drinkType);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Drink other = (Drink) obj;
+        if (Double.doubleToLongBits(this.healthIncrease) != Double.doubleToLongBits(other.healthIncrease)) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        if (this.drinkType != other.drinkType) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Drink{" + "name=" + name + ", description=" + description + ", healthIncrease=" + healthIncrease + ", drinkType=" + drinkType + '}';
     }
     
     
