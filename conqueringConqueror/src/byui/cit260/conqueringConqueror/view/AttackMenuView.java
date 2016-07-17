@@ -56,7 +56,9 @@ public abstract class AttackMenuView extends View{
     }
 
     private void flee() {
-        this.console.println(getPlayer().getName() + " has chossen to flee from the enemy");
+        Villain villain = new Villain();
+        Player player = new Player();
+        this.console.println(player.getName() + " has chossen to flee from " + villain.getName());
         GameMenuView gameMenu = new GameMenuView(){};
         gameMenu.display();
     }
