@@ -19,18 +19,10 @@ public class BattleControl {
     
     public static void attackEnemy(Game game, Villain villain ){
         
-        Player player = game.getPlayer();
-        villain.getName();
-        villain.getAttackPoints();
-        villain.getHealth();
-        player.getStrength();
-        player.getAttackPoints();
-        player.getHealth();
+       
         
-        if(player.getHealth() != 0 && villain.getHealth() != 0){
-            player.getAttackPoints();
-            villain.getAttackPoints();
+        
             
         }
 }
-}
+

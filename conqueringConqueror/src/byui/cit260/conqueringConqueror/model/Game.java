@@ -14,6 +14,7 @@ import java.io.Serializable;
 public class Game implements Serializable{
     
     private Player player;
+    private Villain villain;
     
     
     // class instance variables
@@ -46,6 +47,14 @@ public class Game implements Serializable{
     public void setMap(Map map) {
         this.map = map;
     }   
+
+    public Villain getVillain() {
+        return villain;
+    }
+
+    public void setVillain(Villain villain) {
+        this.villain = villain;
+    }
 
      
 }
