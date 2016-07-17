@@ -6,6 +6,8 @@
 package byui.cit260.conqueringConqueror.view;
 
 import static byui.cit260.conqueringConqueror.control.BattleControl.attackEnemy;
+import byui.cit260.conqueringConqueror.model.Player;
+import byui.cit260.conqueringConqueror.model.Villain;
 import static conqueringconqueror.ConqueringConqueror.getPlayer;
 
 /**
@@ -45,7 +47,9 @@ public abstract class AttackMenuView extends View{
     }
 
     private void attack() {
-        this.console.println(getPlayer().getName() + " has chossen to attack the enemy" + getPlayer());
+        Villain villain = new Villain();
+        Player player = new Player();
+        this.console.println(player.getName() + " has chossen to attack the enemy" + villain.getName());
         AttackVillainView attackVillain = new AttackVillainView();
         attackVillain.display();
         
