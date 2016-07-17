@@ -55,10 +55,11 @@ public class AttackVillainView extends View {
 
     private void sword() {
         Weapons weapons = new Weapons();
-        weapons.setWeaponsType(WeaponsType.Axe);
+        weapons.setWeaponsType(WeaponsType.Sword);
         weapons.setAttackDamage(8);
         Player player = new Player();
         Villain villain = new Villain();
+        villain.setName(displayMessage);
         villain.setHealth(5);
         villain.setAttackPoints(15);
         double i = villain.getHealth();
@@ -79,6 +80,7 @@ public class AttackVillainView extends View {
         weapons.setAttackDamage(6);
         Player player = new Player();
         Villain villain = new Villain();
+        villain.setName(displayMessage);
         villain.setHealth(5);
         villain.setAttackPoints(15);
         double i = villain.getHealth();
@@ -98,6 +100,7 @@ public class AttackVillainView extends View {
          weapons.setAttackDamage(4);
         Player player = new Player();
         Villain villain = new Villain();
+        villain.setName(displayMessage);
         villain.setAttackPoints(5);
         villain.setHealth(15);
         double i = villain.getHealth();
