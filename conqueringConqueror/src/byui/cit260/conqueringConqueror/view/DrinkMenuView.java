@@ -12,6 +12,7 @@ import byui.cit260.conqueringConqueror.model.Player;
 /**
  *
  * @author deannasquire
+ * @author Jason updated 7/16/16
  */
 public abstract class DrinkMenuView extends View {
     

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 /**
  *
  * @author deannasquire
+ * @author Jason updated 7/16/16
  */
 public abstract class EatMenuView extends View {
    
