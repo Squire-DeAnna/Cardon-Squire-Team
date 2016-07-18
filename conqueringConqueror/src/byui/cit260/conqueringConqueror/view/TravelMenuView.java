@@ -31,7 +31,9 @@ public abstract class TravelMenuView extends View{
             + "\nE - Go East"
             + "\nW - Go West"
             + "\nM - View Map"
-            + "\nL - View Location"        
+            + "\nL - View Location" 
+            + "\nX - Explore"
+            + "\nR - Return to Game Menu"
             + "\nQ - Quit");
     }
     
@@ -58,7 +60,12 @@ public abstract class TravelMenuView extends View{
             case 'L':
                 viewLocation();
                 break;
-            
+            case 'X':
+                viewExplore();
+                break;
+            case 'R':
+                returnToGameMenu();
+                break;
             case 'Q':
                 return true;
                 
@@ -146,6 +153,14 @@ public abstract class TravelMenuView extends View{
         this.console.println("\nYou are at: (" + l.getRow() + ", " + l.getCol() + ")");
     }
 
-    
+    private void viewExplore() {
+       ExploreMenuView exploreMenu = new ExploreMenuView(){};
+       exploreMenu.display();
+    }
+
+    private void returnToGameMenu() {
+        GameMenuView gameMenu = new GameMenuView() {};
+        gameMenu.display();
+    }
  }
     

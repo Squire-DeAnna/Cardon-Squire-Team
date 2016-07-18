@@ -60,6 +60,21 @@ public class Map implements Serializable{
                 if(matrix[row][col].getVillain() != null) {
                     rtn += matrix[row][col].getVillain().getName().charAt(0);
                 }
+                
+                // see food
+                if(matrix[row][col].getFood() != null) {
+                    rtn += matrix[row][col].getFood().getName().charAt(0);
+                }
+                
+                // see drinks
+                if(matrix[row][col].getDrink() != null) {
+                    rtn += matrix[row][col].getDrink().getName().charAt(0);
+                }
+                
+                // see weapons
+                if(matrix[row][col].getWeapon() != null) {
+                    rtn += matrix[row][col].getWeapon().getName().charAt(0);
+                }
                 rtn += "\t";
             }
             rtn += "\n";

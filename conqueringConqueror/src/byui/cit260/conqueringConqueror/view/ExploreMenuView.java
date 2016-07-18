@@ -27,7 +27,8 @@ public abstract class ExploreMenuView extends View {
             + "\nS - Search curent location"
             + "\nI - Check current inventory"
             + "\nT - Choose a direction to travel"
-            + "\nQ - Quit to main menu");
+            + "\nR - Return to Game Menu"
+            + "\nQ - Quit");
     }
     
    
@@ -59,6 +60,9 @@ public abstract class ExploreMenuView extends View {
                 break;
             case 'T':
                 travelDirection();
+                break;
+            case 'R':
+                returnToGameMenu();
                 break;
             case 'Q':
                 return true;
@@ -98,6 +102,24 @@ public abstract class ExploreMenuView extends View {
                 RecruitHeroView rhv = new RecruitHeroView();
                 rhv.display();
             }
+            
+            if(ConqueringConqueror.getPlayer().getLocation().getFood() != null) { 
+            this.console.println("\nYou have found " + ConqueringConqueror.getPlayer().getLocation().getFood().getName());
+        } else {
+                this.console.println("\nThere is no food in this location.");
+                }
+            
+            if(ConqueringConqueror.getPlayer().getLocation().getDrink() != null) { 
+            this.console.println("\nYou have found " + ConqueringConqueror.getPlayer().getLocation().getDrink().getName());
+        } else {
+                this.console.println("\nThere are no drinks in this location.");
+                }
+            
+            if(ConqueringConqueror.getPlayer().getLocation().getWeapon() != null) { 
+            this.console.println("\nYou have found " + ConqueringConqueror.getPlayer().getLocation().getWeapon().getName());
+        } else {
+                this.console.println("\nThere are no weapons in this location.");
+                }
         }
 
         private void checkInventory() {
@@ -113,6 +135,11 @@ public abstract class ExploreMenuView extends View {
     private void travelDirection() {
        TravelMenuView travelMenu = new TravelMenuView(){};
        travelMenu.display();
+    }
+
+    private void returnToGameMenu() {
+        GameMenuView gameMenu = new GameMenuView() {};
+        gameMenu.display();
     }
 
 
