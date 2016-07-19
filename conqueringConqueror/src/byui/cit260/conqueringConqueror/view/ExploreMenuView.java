@@ -60,7 +60,7 @@ public abstract class ExploreMenuView extends View {
                 break;
             case 'T':
                 travelDirection();
-                break;
+                return true;
             case 'R':
                 returnToGameMenu();
                 break;

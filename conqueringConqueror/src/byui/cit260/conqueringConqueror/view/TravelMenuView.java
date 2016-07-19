@@ -62,7 +62,7 @@ public abstract class TravelMenuView extends View{
                 break;
             case 'X':
                 viewExplore();
-                break;
+                return true;
             case 'R':
                 returnToGameMenu();
                 break;

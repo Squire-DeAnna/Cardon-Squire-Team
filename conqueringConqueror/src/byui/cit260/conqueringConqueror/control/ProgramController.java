@@ -45,6 +45,10 @@ public class ProgramController {
         
         populateMapWithVillains(gameMap);
         
+        populateMapWithFood(gameMap);
+        
+        populateMapWithDrinks(gameMap);
+        
         player.setLocation(gameMap.getLocation(0, 0));
         
         ConqueringConqueror.setGame(game);
