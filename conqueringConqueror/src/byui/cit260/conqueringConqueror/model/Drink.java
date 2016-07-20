@@ -5,13 +5,14 @@
  */
 package byui.cit260.conqueringConqueror.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Jason
  */
-public class Drink {
+public class Drink implements Serializable {
     
     private String name;
     private String description;

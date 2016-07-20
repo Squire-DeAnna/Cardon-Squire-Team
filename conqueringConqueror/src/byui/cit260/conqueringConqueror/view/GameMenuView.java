@@ -29,7 +29,7 @@ public abstract class GameMenuView extends View {
             + "\nP - Team"
             + "\nS - Save"
             + "\nH - Help"
-            + "\nE - Exit Game");
+            + "\nQ - Exit Game");
     }
     
     public boolean doAction(String selection) {
@@ -70,9 +70,6 @@ public abstract class GameMenuView extends View {
                 break;
             case 'H':
                 helpMenu();
-                break;
-            case 'E':
-                exitGame();
                 break;
             case 'Q':
                 return true;

@@ -50,7 +50,7 @@ public class Map implements Serializable{
             for (int col = 0; col < NUM_COLS; col++) {
                 rtn += matrix[row][col].getType().name().charAt(0);
                 
-                // pull out everything through rtn + tab and add tab back to the line preceeding this comment
+                /*// pull out everything through rtn + tab and add tab back to the line preceeding this comment
                 // see heroes
                 if(matrix[row][col].getHero() != null) {
                     rtn += matrix[row][col].getHero().getName().charAt(0);
@@ -74,7 +74,7 @@ public class Map implements Serializable{
                 // see weapons
                 if(matrix[row][col].getWeapon() != null) {
                     rtn += matrix[row][col].getWeapon().getName().charAt(0);
-                }
+                }*/
                 rtn += "\t";
             }
             rtn += "\n";

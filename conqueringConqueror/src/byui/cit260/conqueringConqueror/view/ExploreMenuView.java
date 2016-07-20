@@ -27,7 +27,6 @@ public abstract class ExploreMenuView extends View {
             + "\nS - Search curent location"
             + "\nI - Check current inventory"
             + "\nT - Choose a direction to travel"
-            + "\nR - Return to Game Menu"
             + "\nQ - Quit");
     }
     
@@ -61,9 +60,6 @@ public abstract class ExploreMenuView extends View {
             case 'T':
                 travelDirection();
                 return true;
-            case 'R':
-                returnToGameMenu();
-                break;
             case 'Q':
                 return true;
             
@@ -104,19 +100,19 @@ public abstract class ExploreMenuView extends View {
             }
             
             if(ConqueringConqueror.getPlayer().getLocation().getFood() != null) { 
-            this.console.println("\nYou have found " + ConqueringConqueror.getPlayer().getLocation().getFood().getName());
+            this.console.println("\nYou have found " + ConqueringConqueror.getPlayer().getLocation().getFood().getName() + ".");
         } else {
                 this.console.println("\nThere is no food in this location.");
                 }
             
             if(ConqueringConqueror.getPlayer().getLocation().getDrink() != null) { 
-            this.console.println("\nYou have found " + ConqueringConqueror.getPlayer().getLocation().getDrink().getName());
+            this.console.println("\nYou have found " + ConqueringConqueror.getPlayer().getLocation().getDrink().getName() + ".");
         } else {
                 this.console.println("\nThere are no drinks in this location.");
                 }
             
             if(ConqueringConqueror.getPlayer().getLocation().getWeapon() != null) { 
-            this.console.println("\nYou have found " + ConqueringConqueror.getPlayer().getLocation().getWeapon().getName());
+            this.console.println("\nYou have found " + ConqueringConqueror.getPlayer().getLocation().getWeapon().getName() + ".");
         } else {
                 this.console.println("\nThere are no weapons in this location.");
                 }

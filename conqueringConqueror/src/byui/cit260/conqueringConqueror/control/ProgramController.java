@@ -49,6 +49,8 @@ public class ProgramController {
         
         populateMapWithDrinks(gameMap);
         
+        populateMapWithWeapons(gameMap);
+        
         player.setLocation(gameMap.getLocation(0, 0));
         
         ConqueringConqueror.setGame(game);
@@ -242,7 +244,7 @@ public class ProgramController {
         foodList.add(venison);
         
         Food goat = new Food();
-        goat.setName("Goat");
+        goat.setName("Goat meat");
         goat.setHealthIncrease(3);
         foodList.add(goat);
         
@@ -257,12 +259,12 @@ public class ProgramController {
         foodList.add(grapes);
         
         Food locust = new Food();
-        locust.setName("Locust");
+        locust.setName("Locusts");
         locust.setHealthIncrease(2);
         foodList.add(locust);
         
         Food lamb = new Food();
-        lamb.setName("Lamb");
+        lamb.setName("Lamb meat");
         lamb.setHealthIncrease(6);
         foodList.add(lamb);
         
@@ -320,10 +322,11 @@ public class ProgramController {
         knife.setAttackDamage(7);
         weaponList.add(knife);
         
-        Weapons fists = new Weapons();
+        // don't want fists to be able to be added to inventory, but want as a weapon.
+        /*Weapons fists = new Weapons();
         fists.setName("Fists");
         fists.setAttackDamage(4);
-        weaponList.add(fists);
+        weaponList.add(fists);*/
         
         return weaponList;
     }

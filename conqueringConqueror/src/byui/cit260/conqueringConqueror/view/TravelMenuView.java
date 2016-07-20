@@ -33,7 +33,6 @@ public abstract class TravelMenuView extends View{
             + "\nM - View Map"
             + "\nL - View Location" 
             + "\nX - Explore"
-            + "\nR - Return to Game Menu"
             + "\nQ - Quit");
     }
     
@@ -63,9 +62,6 @@ public abstract class TravelMenuView extends View{
             case 'X':
                 viewExplore();
                 return true;
-            case 'R':
-                returnToGameMenu();
-                break;
             case 'Q':
                 return true;
                 
