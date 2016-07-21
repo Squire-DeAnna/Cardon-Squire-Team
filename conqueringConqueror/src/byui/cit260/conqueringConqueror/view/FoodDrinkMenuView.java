@@ -45,12 +45,12 @@ public abstract class FoodDrinkMenuView extends View {
             case 'S':
                 saveCurrentGame();
                 break;
-            case 'F':
+            /*case 'F':
                 displayAvailableFood();
                 break;    
             case 'A':
                 displayFood();
-                break;
+                break;*/
             case 'Q':
                 return true;
             
@@ -74,7 +74,7 @@ public abstract class FoodDrinkMenuView extends View {
         this.console.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
     }
 
-    private void displayAvailableFood() {
+   /* private void displayAvailableFood() {
        
         for (FoodType foodType : FoodType.values()) {
             this.console.println("The available food Items are: " + foodType.name());
@@ -89,6 +89,6 @@ public abstract class FoodDrinkMenuView extends View {
            text += FoodType[i];
            this.console.println(FoodType[i] + " are a food type of the game");
     }
-    }
+    }*/
 
 }
