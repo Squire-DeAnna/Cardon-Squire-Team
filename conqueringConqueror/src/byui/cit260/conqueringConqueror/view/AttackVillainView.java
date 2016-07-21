@@ -65,7 +65,7 @@ public class AttackVillainView extends View {
         villain.setHealth(5);
         villain.setAttackPoints(15);
         double i = villain.getHealth();
-        this.console.println(getPlayer().getName() + " \nhas chossen to attack" + villain().getName() +  "with the sword");  
+        this.console.println(getPlayer().getName() + " \nhas chossen to attack" + villain.getName() +  "with the sword");  
         this.console.println("\nThe sword does 8 attack damage" );
             while(i <= 0 ){
                 this.console.println("\n The villains health is " + villain.getHealth());

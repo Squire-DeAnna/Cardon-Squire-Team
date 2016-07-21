@@ -9,6 +9,9 @@ import static byui.cit260.conqueringConqueror.control.BattleControl.attackEnemy;
 import byui.cit260.conqueringConqueror.model.Player;
 import byui.cit260.conqueringConqueror.model.Villain;
 import static conqueringconqueror.ConqueringConqueror.getPlayer;
+import static conqueringconqueror.ConqueringConqueror.getVillain;
+import static conqueringconqueror.ConqueringConqueror.getVillains;
+import java.util.List;
 
 /**
  *
@@ -47,18 +50,15 @@ public abstract class AttackMenuView extends View{
     }
 
     private void attack() {
-        Villain villain = new Villain();
-        Player player = new Player();
-        this.console.println(player.getName() + " has chossen to attack the enemy" + villain.getName());
+       this.console.println(getPlayer().getName() + " has chossen to attack the enemy" );
+        
         AttackVillainView attackVillain = new AttackVillainView();
         attackVillain.display();
         
     }
 
     private void flee() {
-        Villain villain = new Villain();
-        Player player = new Player();
-        this.console.println(player.getName() + " has chossen to flee from " + villain.getName());
+        this.console.println(getPlayer().getName() + " has chossen to flee from ");
         GameMenuView gameMenu = new GameMenuView(){};
         gameMenu.display();
     }

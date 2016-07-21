@@ -212,12 +212,14 @@ public class ProgramController {
         lugalzagesi.setAttackPoints(10);
         lugalzagesi.setHealth(40);
         villainList.add(lugalzagesi);
+       
         
         Villain umma = new Villain();
         umma.setName("Umma");
         umma.setAttackPoints(8);
         umma.setHealth(35);
         villainList.add(umma);
+       
         
         Villain zababa = new Villain();
         zababa.setName("Zababa");

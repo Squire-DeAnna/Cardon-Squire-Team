@@ -5,6 +5,7 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import byui.cit260.conqueringConqueror.model.Villain;
 import conqueringconqueror.ConqueringConqueror;
 
 /**
@@ -71,8 +72,13 @@ public abstract class ExploreMenuView extends View {
     }
 
         private void attack() {
+            Villain villain = new Villain();
+            if (villain != null){
         AttackMenuView attackMenu = new AttackMenuView() {};
         attackMenu.display();
+            }else{
+                this.console.println("There is no villain to fight");
+            }
         }
 
         private void flee() {

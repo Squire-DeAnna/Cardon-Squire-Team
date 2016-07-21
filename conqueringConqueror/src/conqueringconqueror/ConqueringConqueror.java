@@ -18,6 +18,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -29,6 +30,8 @@ public class ConqueringConqueror {
     
     private static Player player;
     private static Game game;
+    private static Villain villain;
+    private static   List<Villain> villains;
     
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
@@ -120,5 +123,23 @@ public class ConqueringConqueror {
     public static void setGame(Game game) {
         ConqueringConqueror.game = game;
     }
+
+    public static Villain getVillain() {
+        return villain;
+    }
+
+    public static void setVillain(Villain villain) {
+        ConqueringConqueror.villain = villain;
+    }
+
+    public static List<Villain> getVillains() {
+        return villains;
+    }
+
+    public static void setVillains(List<Villain> villains) {
+        ConqueringConqueror.villains = villains;
+    }
+    
+    
 }
     
