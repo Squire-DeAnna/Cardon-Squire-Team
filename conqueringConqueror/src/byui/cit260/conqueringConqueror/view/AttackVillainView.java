@@ -26,7 +26,7 @@ public class AttackVillainView extends View {
             + "\nA - Attack Enemy With Axe" 
             + "\nK - Attack Enemy With Knife"  
             + "\nF - Attack Enemy With Fists"
-            + "\nQ - Quit fighting");
+            + "\nQ - Quit fighting ");
     }
    
      @Override
