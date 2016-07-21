@@ -22,14 +22,14 @@ public abstract class GameMenuView extends View {
             + "\nM - Map"
             + "\nI - Inventory"
             + "\nT - Travel"
-            + "\nE - Explore"
+            + "\nX - Explore"
             + "\nA - Attack"
             + "\nL - Loot"
             + "\nW - Weapons"
             + "\nP - Team"
             + "\nS - Save"
             + "\nH - Help"
-            + "\nQ - Quit");
+            + "\nQ - Exit Game");
     }
     
     public boolean doAction(String selection) {
@@ -50,7 +50,7 @@ public abstract class GameMenuView extends View {
             case 'T':
                 travel();
                 break;
-            case 'E':
+            case 'X':
                 explore();
                 break;
             case 'A':
@@ -139,5 +139,10 @@ public abstract class GameMenuView extends View {
     private void helpMenu() {
         HelpMenuView helpMenu = new HelpMenuView() {};
         helpMenu.display();
+    }
+
+    private void exitGame() {
+        MainMenuView mainMenu = new MainMenuView() {};
+        mainMenu.display();
     }
 }

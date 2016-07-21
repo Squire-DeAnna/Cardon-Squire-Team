@@ -75,7 +75,7 @@ public class RecruitHeroView extends View {
                 ConqueringConqueror.getPlayer().addHero(currentLocation.getHero());
                 currentLocation.setHero(null);
             } else {
-                this.console.println("Do you want to try again?"
+                this.console.println("That is incorrect. Do you want to try again?"
                 +"\nY - Yes"
                 +"\nN - No");
                 if (this.keyboard.readLine().toUpperCase().charAt(0) == 'Y'){

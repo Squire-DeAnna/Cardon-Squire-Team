@@ -25,6 +25,9 @@ public class Location implements Serializable{
     private int col;
     private FoodType foodType;
     private DrinkType drinkType;
+    private Food food;
+    private Drink drink;
+    private Weapons weapon;
 
     public Location() {
     }
@@ -107,6 +110,30 @@ public class Location implements Serializable{
 
     public void setDrinkType(DrinkType drinkType) {
         this.drinkType = drinkType;
+    }
+
+    public Food getFood() {
+        return food;
+    }
+
+    public void setFood(Food food) {
+        this.food = food;
+    }
+
+    public Drink getDrink() {
+        return drink;
+    }
+
+    public void setDrink(Drink drink) {
+        this.drink = drink;
+    }
+
+    public Weapons getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapons weapon) {
+        this.weapon = weapon;
     }
     
     

@@ -5,11 +5,14 @@
  */
 package byui.cit260.conqueringConqueror.control;
 
+import byui.cit260.conqueringConqueror.model.Drink;
+import byui.cit260.conqueringConqueror.model.Food;
 import byui.cit260.conqueringConqueror.model.Game;
 import byui.cit260.conqueringConqueror.model.Hero;
 import byui.cit260.conqueringConqueror.model.Map;
 import byui.cit260.conqueringConqueror.model.Player;
 import byui.cit260.conqueringConqueror.model.Villain;
+import byui.cit260.conqueringConqueror.model.Weapons;
 import conqueringconqueror.ConqueringConqueror;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +44,12 @@ public class ProgramController {
         populateMapWithHeroes(gameMap);
         
         populateMapWithVillains(gameMap);
+        
+        populateMapWithFood(gameMap);
+        
+        populateMapWithDrinks(gameMap);
+        
+        populateMapWithWeapons(gameMap);
         
         player.setLocation(gameMap.getLocation(0, 0));
         
@@ -96,6 +105,78 @@ public class ProgramController {
         }
         
     }
+        
+        public static void populateMapWithFood(Map map) {
+            
+        List<Food> food = createFoodList();
+        
+        for(Food f : food) {
+            
+            boolean success = false;
+            
+            do {
+                int col = (int) (Math.random() * Map.NUM_COLS);
+                int row = (int) (Math.random() * Map.NUM_ROWS);
+                
+                success = false;
+                
+                if(map.getLocation(row, col).getFood() == null) {
+                    map.getLocation(row, col).setFood(f);
+                    success = true;
+                }
+                
+            } while(success == false);
+        }
+            
+        }
+        
+        public static void populateMapWithDrinks(Map map) {
+            
+        List<Drink> drinks = createDrinkList();
+        
+        for(Drink d : drinks) {
+            
+            boolean success = false;
+            
+            do {
+                int col = (int) (Math.random() * Map.NUM_COLS);
+                int row = (int) (Math.random() * Map.NUM_ROWS);
+                
+                success = false;
+                
+                if(map.getLocation(row, col).getDrink() == null) {
+                    map.getLocation(row, col).setDrink(d);
+                    success = true;
+                }
+                
+            } while(success == false);
+        }
+            
+        }
+        
+        public static void populateMapWithWeapons(Map map) {
+            
+        List<Weapons> weapon = createWeaponList();
+        
+        for(Weapons w : weapon) {
+            
+            boolean success = false;
+            
+            do {
+                int col = (int) (Math.random() * Map.NUM_COLS);
+                int row = (int) (Math.random() * Map.NUM_ROWS);
+                
+                success = false;
+                
+                if(map.getLocation(row, col).getWeapon() == null) {
+                    map.getLocation(row, col).setWeapon(w);
+                    success = true;
+                }
+                
+            } while(success == false);
+        }
+            
+        }
     
     public static List<Hero> createHeroList() {
         
@@ -106,7 +187,6 @@ public class ProgramController {
         wizard.setAttackPoints(10);
         wizard.setHealth(40);
         heroList.add(wizard);
-        
         
         Hero knight = new Hero();
         knight.setName("Knight");
@@ -133,7 +213,6 @@ public class ProgramController {
         lugalzagesi.setHealth(40);
         villainList.add(lugalzagesi);
         
-        
         Villain umma = new Villain();
         umma.setName("Umma");
         umma.setAttackPoints(8);
@@ -153,6 +232,103 @@ public class ProgramController {
         villainList.add(sargon);
         
         return villainList;
+    }
+    
+    public static List<Food> createFoodList() {
+        
+        List<Food> foodList = new ArrayList<>();
+        
+        Food venison = new Food();
+        venison.setName("Venison");
+        venison.setHealthIncrease(4);
+        foodList.add(venison);
+        
+        Food goat = new Food();
+        goat.setName("Goat meat");
+        goat.setHealthIncrease(3);
+        foodList.add(goat);
+        
+        Food dates = new Food();
+        dates.setName("Dates");
+        dates.setHealthIncrease(4);
+        foodList.add(dates);
+        
+        Food grapes = new Food();
+        grapes.setName("Grapes");
+        grapes.setHealthIncrease(4);
+        foodList.add(grapes);
+        
+        Food locust = new Food();
+        locust.setName("Locusts");
+        locust.setHealthIncrease(2);
+        foodList.add(locust);
+        
+        Food lamb = new Food();
+        lamb.setName("Lamb meat");
+        lamb.setHealthIncrease(6);
+        foodList.add(lamb);
+        
+        Food berries = new Food();
+        berries.setName("Berries");
+        berries.setHealthIncrease(5);
+        foodList.add(berries);
+        
+        return foodList;
+    }
+    
+    public static List<Drink> createDrinkList() {
+        
+        List<Drink> drinkList = new ArrayList<>();
+        
+        Drink water = new Drink();
+        water.setName("Water");
+        water.setHealthIncrease(5);
+        drinkList.add(water);
+        
+        Drink juice = new Drink();
+        juice.setName("Juice");
+        juice.setHealthIncrease(4);
+        drinkList.add(juice);
+        
+        Drink milk = new Drink();
+        milk.setName("Milk");
+        milk.setHealthIncrease(3);
+        drinkList.add(milk);
+        
+        Drink nectar = new Drink();
+        nectar.setName("Nectar of the Gods");
+        nectar.setHealthIncrease(6);
+        drinkList.add(nectar);
+        
+        return drinkList;
+    }
+    
+    public static List<Weapons> createWeaponList() {
+        
+        List<Weapons> weaponList = new ArrayList<>();
+        
+        Weapons sword = new Weapons();
+        sword.setName("Sword");
+        sword.setAttackDamage(12);
+        weaponList.add(sword);
+        
+        Weapons axe = new Weapons();
+        axe.setName("Axe");
+        axe.setAttackDamage(9);
+        weaponList.add(axe);
+        
+        Weapons knife = new Weapons();
+        knife.setName("Knife");
+        knife.setAttackDamage(7);
+        weaponList.add(knife);
+        
+        // don't want fists to be able to be added to inventory, but want as a weapon.
+        /*Weapons fists = new Weapons();
+        fists.setName("Fists");
+        fists.setAttackDamage(4);
+        weaponList.add(fists);*/
+        
+        return weaponList;
     }
     
 }
