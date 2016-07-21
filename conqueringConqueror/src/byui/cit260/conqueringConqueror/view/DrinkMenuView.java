@@ -8,6 +8,7 @@ package byui.cit260.conqueringConqueror.view;
 import byui.cit260.conqueringConqueror.model.Drink;
 import byui.cit260.conqueringConqueror.model.DrinkType;
 import byui.cit260.conqueringConqueror.model.Player;
+import static conqueringconqueror.ConqueringConqueror.getPlayer;
 
 /**
  *
@@ -75,7 +76,7 @@ public abstract class DrinkMenuView extends View {
                 this.console.println("Your heath is at 100% you do not need any food right now");
             }else{
         double playerHealth = player.getHealth() + drink.getHealthIncrease();
-        this.console.println(player.getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
+        this.console.println(getPlayer().getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
         }
     }
 
@@ -89,7 +90,7 @@ public abstract class DrinkMenuView extends View {
                 this.console.println("Your heath is at 100% you do not need any food right now");
             }else{
         double playerHealth = player.getHealth() + drink.getHealthIncrease();
-        this.console.println(player.getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
+        this.console.println(getPlayer().getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
         }
     }
 
@@ -103,7 +104,7 @@ public abstract class DrinkMenuView extends View {
                 this.console.println("Your heath is at 100% you do not need any food right now");
             }else{
         double playerHealth = player.getHealth() + drink.getHealthIncrease();
-        this.console.println(player.getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
+        this.console.println(getPlayer().getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
         }
     }
 
@@ -117,7 +118,7 @@ public abstract class DrinkMenuView extends View {
                 this.console.println("Your heath is at 100% you do not need any food right now");
             }else{
         double playerHealth = player.getHealth() + drink.getHealthIncrease();
-        this.console.println(player.getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
+        this.console.println(getPlayer().getName() + "has chosen to drink " + drink.getDrinkType() + " and has heath has increased to " + playerHealth);
         }
     }
 }

@@ -10,6 +10,7 @@ import byui.cit260.conqueringConqueror.model.Player;
 import byui.cit260.conqueringConqueror.model.Villain;
 import byui.cit260.conqueringConqueror.model.Weapons;
 import byui.cit260.conqueringConqueror.model.WeaponsType;
+import static conqueringconqueror.ConqueringConqueror.getPlayer;
 
 /**
  *
@@ -45,7 +46,8 @@ public class AttackVillainView extends View {
             case 'F':
                 fists();
                 break;
-            
+            case 'Q':
+                return true;
             default:
                 this.console.println("Invalid option");
                 break;
@@ -63,7 +65,7 @@ public class AttackVillainView extends View {
         villain.setHealth(5);
         villain.setAttackPoints(15);
         double i = villain.getHealth();
-        this.console.println(player.getName() + " \nhas chossen to attack" + villain.getName() +  "with the sword");  
+        this.console.println(getPlayer().getName() + " \nhas chossen to attack" + villain().getName() +  "with the sword");  
         this.console.println("\nThe sword does 8 attack damage" );
             while(i <= 0 ){
                 this.console.println("\n The villains health is " + villain.getHealth());
@@ -84,7 +86,7 @@ public class AttackVillainView extends View {
         villain.setHealth(5);
         villain.setAttackPoints(15);
         double i = villain.getHealth();
-        this.console.println(player.getName() + " \nhas chossen to attack" + villain.getName() +  "with the axe");  
+        this.console.println(getPlayer().getName() + " \nhas chossen to attack" + villain.getName() +  "with the axe");  
         this.console.println("The axe does 6 attack damage" );
             while(i <= 0 ){
                 this.console.println("\n The villains health is " + villain.getHealth());
@@ -104,7 +106,7 @@ public class AttackVillainView extends View {
         villain.setAttackPoints(5);
         villain.setHealth(15);
         double i = villain.getHealth();
-        this.console.println(player.getName() + " \nhas chossen to attack" +villain.getName() +  "with the knife");  
+        this.console.println(getPlayer().getName() + " \nhas chossen to attack" +villain.getName() +  "with the knife");  
         this.console.println("\n The" + weapons.getWeaponsType() + " does " + weapons.getAttackDamage() + " attack damage" );
             while(i <= 0 ){
                 this.console.println("\n The villains health is " + villain.getHealth());
@@ -117,14 +119,14 @@ public class AttackVillainView extends View {
     private void fists() {
         Weapons weapons = new Weapons();
         weapons.setAttackDamage(2);
-        weapons.setWeaponsType(WeaponsType.fists);
+        weapons.setWeaponsType(WeaponsType.Fists);
         Player player = new Player();
         Villain villain = new Villain();
         villain.setName(displayMessage);
         villain.setHealth(15);
         villain.setAttackPoints(5);
          double i = villain.getHealth();
-        this.console.println( player.getName() + " \nhas chossen to attack" + villain.getName() +  "with the" + weapons.getWeaponsType());  
+        this.console.println(getPlayer().getName() + " \nhas chossen to attack" + villain.getName() +  "with the" + weapons.getWeaponsType());  
         this.console.println("The " + weapons.getWeaponsType() + " does " + weapons.getAttackDamage() + " attack damage" );
             while(i <= 0 ){
               

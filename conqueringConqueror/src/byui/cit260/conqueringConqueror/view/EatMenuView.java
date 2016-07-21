@@ -9,6 +9,7 @@ import byui.cit260.conqueringConqueror.control.GameControl;
 import byui.cit260.conqueringConqueror.model.Food;
 import byui.cit260.conqueringConqueror.model.FoodType;
 import byui.cit260.conqueringConqueror.model.Player;
+import static conqueringconqueror.ConqueringConqueror.getPlayer;
 import java.util.ArrayList;
 
 /**
@@ -110,12 +111,13 @@ public abstract class EatMenuView extends View {
                 this.console.println("Your health is at 100% you do not need any food right now");
             }else{
         double playerHealth = player.getHealth() + food.getHealthIncrease();
-       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+       this.console.println(getPlayer().getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
             }
     }
 
     private void eatVenison() {
         Player player = new Player();
+        
         Food food = new Food();
         food.setFoodType(FoodType.Venison);
         food.setHealthIncrease(8);
@@ -123,7 +125,7 @@ public abstract class EatMenuView extends View {
                 this.console.println("Your health is at 100% you do not need any food right now");
             }else{
         double playerHealth = player.getHealth() + food.getHealthIncrease();
-       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+       this.console.println(getPlayer().getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
         }
     }
 
@@ -136,7 +138,7 @@ public abstract class EatMenuView extends View {
                 this.console.println("Your health is at 100% you do not need any food right now");
             }else{
         double playerHealth = player.getHealth() + food.getHealthIncrease();
-       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+       this.console.println(getPlayer().getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
         }
     }
 
@@ -149,7 +151,7 @@ public abstract class EatMenuView extends View {
         if(player.getHealth() == 100){
                 this.console.println("Your health is at 100% you do not need any food right now");
             }else{
-       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+       this.console.println(getPlayer().getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
         }
     }
 
@@ -162,7 +164,7 @@ public abstract class EatMenuView extends View {
                 this.console.println("Your health is at 100% you do not need any food right now");
             }else{
         double playerHealth = player.getHealth() + food.getHealthIncrease();
-       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+       this.console.println(getPlayer().getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
         }
     }
 
@@ -175,7 +177,7 @@ public abstract class EatMenuView extends View {
                 this.console.println("Your health is at 100% you do not need any food right now");
             }else{
         double playerHealth = player.getHealth() + food.getHealthIncrease();
-       this.console.println(player.getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
+       this.console.println(getPlayer().getName() + "\n Has chossen to eat " + food.getFoodType() + " and health has increased to " + playerHealth);
         }
     }
 
@@ -188,7 +190,7 @@ public abstract class EatMenuView extends View {
                 this.console.println("Your health is at 100% you do not need any food right now");
             }else{
         double playerHealth = player.getHealth() + food.getHealthIncrease();
-       this.console.println(player.getName() + "\n Has chossen to eat" + food.getFoodType() +  "and health has increased to " + playerHealth);
+       this.console.println(getPlayer().getName() + "\n Has chossen to eat" + food.getFoodType() +  "and health has increased to " + playerHealth);
         }
     }
     }

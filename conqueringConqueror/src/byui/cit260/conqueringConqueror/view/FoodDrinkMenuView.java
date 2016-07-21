@@ -5,6 +5,13 @@
  */
 package byui.cit260.conqueringConqueror.view;
 
+import byui.cit260.conqueringConqueror.model.Food;
+import byui.cit260.conqueringConqueror.model.FoodType;
+import java.sql.Array;
+import static java.sql.Types.NULL;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  *
  * @author deannasquire
@@ -18,6 +25,8 @@ public abstract class FoodDrinkMenuView extends View {
             + "\nE - Eat"
             + "\nD - Drink"
             + "\nS - Save"
+            + "\nF - See available food"
+            + "\nA - Short list of food"
             + "\nQ - Quit");
     }
 
@@ -36,8 +45,15 @@ public abstract class FoodDrinkMenuView extends View {
             case 'S':
                 saveCurrentGame();
                 break;
+            case 'F':
+                displayAvailableFood();
+                break;    
+            case 'A':
+                displayFood();
+                break;
             case 'Q':
                 return true;
+            
              
             default:
                 this.console.println("Invalid option");
@@ -56,6 +72,23 @@ public abstract class FoodDrinkMenuView extends View {
          
          private void saveCurrentGame() {
         this.console.println("\nCALLED SAVE CURRENT GAME - NOT IMPLEMENTED YET");
+    }
+
+    private void displayAvailableFood() {
+       
+        for (FoodType foodType : FoodType.values()) {
+            this.console.println("The available food Items are: " + foodType.name());
+        }
+    }
+
+    private void displayFood() {
+        String[] FoodType = { "Venison", "Goat", "Dates", "Grapes", "Locusts", "Lamb", "Berries"};
+        
+       String text = " ";
+       for (int i = 2; i <= 4; i++ ){
+           text += FoodType[i];
+           this.console.println(FoodType[i] + " are a food type of the game");
+    }
     }
 
 }

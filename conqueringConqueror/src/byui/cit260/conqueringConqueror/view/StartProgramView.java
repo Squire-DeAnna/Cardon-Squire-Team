@@ -46,8 +46,8 @@ public class StartProgramView {
         
         boolean validName = false;
         // added String input as a variable
-        String input = null;
-        String name = "";
+        String input;
+        String playerName = "";
         //Scanner keyboard = new Scanner(System.in);
         
         this.console.println("Please enter your name: ");
@@ -56,19 +56,29 @@ public class StartProgramView {
         while(!validName) {
             input = keyboard.readLine();
             
-            if(input == null || input.length() >= 2) {
+            if(input == null || input.length() <= 2) {
+                //validName = true;
+                ErrorView.display(this.getClass().getName(), "Input is invalid - name must be at least 2 characters. Please Enter your name again.");
+                 displayBanner();
+               // name = input;
+            
+            } 
+            
+            else if(input.length() == 0 || input.length() >= 2){
+                Player player = new Player();
+                //ErrorView.display(this.getClass().getName(), "Input is invalid - name must be at least 2 characters.");
                 validName = true;
-                name = input;
-            } else {
-                ErrorView.display(this.getClass().getName(), "Input is invalid - name must be at least 2 characters.");
+                playerName = input;
             }
-            break;
+            
         }
+       
         } catch (Exception e) {
             ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
+            
         }
         
-        return name;
+        return playerName;
     }
     
     public void displayBanner(){

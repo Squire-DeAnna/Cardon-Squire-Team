@@ -35,6 +35,7 @@ public abstract class TravelMenuView extends View{
             + "\nQ - Quit");
     }
     
+    @Override
      public boolean doAction(String selection) {
         
         char charSel = selection.toUpperCase().charAt(0);

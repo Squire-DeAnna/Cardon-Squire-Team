@@ -18,3 +18,4 @@ public enum FoodType {
     Lamb,
     Berries
 }
+
