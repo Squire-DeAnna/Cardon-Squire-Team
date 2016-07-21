@@ -25,7 +25,8 @@ public class AttackVillainView extends View {
             + "\nS - Attack Enemy with Sword"
             + "\nA - Attack Enemy With Axe" 
             + "\nK - Attack Enemy With Knife"  
-            + "\nF - Attack Enemy With Fists"  );
+            + "\nF - Attack Enemy With Fists"
+            + "\nQ - Quit fighting");
     }
    
      @Override
@@ -72,6 +73,8 @@ public class AttackVillainView extends View {
                 i++;
             }
                 this.console.println("\n You have defeated the villain ");
+                GameMenuView gameMenu = new GameMenuView(){};
+                gameMenu.display();
             
         
     }
@@ -93,7 +96,8 @@ public class AttackVillainView extends View {
                 i++;
             }
                 this.console.println("\n You have defeated the villain ");
-            
+            GameMenuView gameMenu = new GameMenuView(){};
+            gameMenu.display();
     }
 
     private void knife() {
@@ -113,6 +117,8 @@ public class AttackVillainView extends View {
                 i++;
             }
                 this.console.println("\n You have defeated the villain ");
+                GameMenuView gameMenu = new GameMenuView(){};
+                gameMenu.display();
             }
     
 
@@ -134,6 +140,8 @@ public class AttackVillainView extends View {
                 i++;
             }
                 this.console.println("\n You have defeated the villain ");
+                GameMenuView gameMenu = new GameMenuView(){};
+                gameMenu.display();
             
     }
 }
